@@ -1,0 +1,34 @@
+{
+  "name": "m4dz-talks",
+  "version": "4.0.0",
+  "description": "m4dz' talks : slides, resources, material, and support",
+  "scripts": {
+    "build": "NODE_ENV=production node metalsmith.js",
+    "dev": "NODE_ENV=development DEBUG=metalsmith:* node metalsmith.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4dz/talks.git"
+  },
+  "private": true,
+  "author": "m4dz <code@m4dz.net> (https://m4dz.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m4dz/talks/issues"
+  },
+  "homepage": "https:talks.m4dz.net",
+  "devDependencies": {
+    "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-debug": "^1.2.0",
+    "metalsmith-env": "^2.0.0",
+    "metalsmith-layouts": "^1.8.1",
+    "metalsmith-markdown-remarkable": "^0.1.1",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-serve": "0.0.7",
+    "metalsmith-watch": "^1.0.3"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-rc.4"
+  }
+}

@@ -1,0 +1,37 @@
+extends _layout.pug
+
+block content
+  != contents
+
+  section(id="recent")
+    h2 Last talks
+    ul
+      each deck in collections.recent
+        li
+          p: a(href=deck.path)= deck.title
+          p
+
+  section(id="legacy")
+    h2 Legacy talks
+    ul
+      each deck in collections.legacy
+        li
+          p: a(href=deck.path)= deck.title
+          if deck.dates
+            ul
+              each date in deck.dates
+                if (typeof date === 'string')
+                  li= date
+                else
+                  li= date.title
+                    ul
+                      each href, label in date
+                        if (label != 'title')
+                          li: a(href= href)= label
+
+
+  footer
+    p.
+      All talks are freely available under #[a(href='http://creativecommons.org/licenses/by-sa/4.0/') CC BY-SA 4.0] license.
+    p.
+      The source code repository with all material is #[a(href='https://github.com/m4dz/talks') hosted at github://m4dz/talks]. Your comments, issues, and pull-requests are welcome!
