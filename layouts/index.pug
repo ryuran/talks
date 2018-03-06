@@ -23,10 +23,10 @@ block content
                 if (typeof date === 'string')
                   li= date
                 else
-                  li= date.title
+                  li= date.name
                     ul
                       each href, label in date
-                        if (label != 'title')
+                        if (label != 'name')
                           li: a(href= href)= label
 
 

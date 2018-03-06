@@ -7,6 +7,8 @@ const markdown = require('metalsmith-markdown-remarkable')
 const permalinks = require('metalsmith-permalinks')
 const sitemap = require('metalsmith-sitemap')
 
+const includeTag = require('./plugins/include-tag')
+
 const server = require('metalsmith-serve')
 const watcher = require('metalsmith-watch')
 const debug = require('metalsmith-debug')
@@ -42,10 +44,17 @@ if (process.env.NODE_ENV === 'development') {
 
 metalsmith
   .ignore([
-    'sections'
+    'sections',
+    'whoami'
   ])
   .use(collections())
-  .use(markdown())
+  .use(includeTag())
+  .use(markdown('commonmark', {
+    html: true,
+    breaks: true,
+    linkify: true,
+    typographer: true
+  }))
   .use(permalinks({
     pattern: ':title',
     relative: false
