@@ -7,7 +7,7 @@ const markdown = require('metalsmith-markdown-remarkable')
 const permalinks = require('metalsmith-permalinks')
 const sitemap = require('metalsmith-sitemap')
 
-const includeTag = require('./plugins/include-tag')
+const include = require('./plugins/include-md')
 
 const server = require('metalsmith-serve')
 const watcher = require('metalsmith-watch')
@@ -48,7 +48,7 @@ metalsmith
     'whoami'
   ])
   .use(collections())
-  .use(includeTag())
+  .use(include())
   .use(markdown('commonmark', {
     html: true,
     breaks: true,
