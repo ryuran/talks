@@ -34,6 +34,7 @@
     "slug-component": "^1.1.0"
   },
   "dependencies": {
+    "metalsmith-markdownit": "^0.5.0",
     "pug": "^2.0.0-rc.4"
   }
 }

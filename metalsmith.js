@@ -1,13 +1,24 @@
 'use strict'
 
 const Metalsmith = require('metalsmith')
-const collections = require('metalsmith-collections')
 const layouts = require('metalsmith-layouts')
-const markdown = require('metalsmith-markdown-remarkable')
+
+const collections = require('metalsmith-collections')
 const permalinks = require('metalsmith-permalinks')
 const sitemap = require('metalsmith-sitemap')
 
-const include = require('./plugins/include-md')
+// const markdown = require('metalsmith-markdown-remarkable')
+const markdown = require('metalsmith-markdownit')('commonmark', {
+  typography: true,
+  linkify: true
+})
+const sections = require('./plugins/sections')
+
+markdown.parser.use(sections)
+
+// const include = require('./plugins/include-md')
+// const remarkableSection = require('./plugins/remarkable-section')
+
 
 const server = require('metalsmith-serve')
 const watcher = require('metalsmith-watch')
@@ -45,16 +56,18 @@ if (process.env.NODE_ENV === 'development') {
 metalsmith
   .ignore([
     'sections',
-    'whoami'
+    'whoami',
+    'includes'
   ])
   .use(collections())
-  .use(include())
-  .use(markdown('commonmark', {
-    html: true,
-    breaks: true,
-    linkify: true,
-    typographer: true
-  }))
+  // .use(include())
+  // .use(markdown('full', {
+  //   html: true,
+  //   linkify: true,
+  //   typographer: true
+  // })
+  // .use(remarkableSection))
+  .use(markdown)
   .use(permalinks({
     pattern: ':title',
     relative: false
