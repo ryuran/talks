@@ -1,76 +1,101 @@
-const MARKER_LEN = 3
-const MARKER_CHAR = '='
+const MARKER_LEN   = 3
+const MARKER_CHAR  = 61 /* = */
+const INCLUDE_CHAR = 94 /* ^ */
 
 
 const sections = (md) => {
 
-  const builder = (state, startLine, endLine, silent) => {
-
-    // define head positions
-    let start = state.bMarks[startLine] + state.tShift[startLine]
-    let max = state.eMarks[startLine]
-    let head = start
-
-    // set opening/close status
-    // open a section tag by default
-    let auto_close = false
-    let auto_open = true
-    let open_markup = ''
-
-    // exit early if inside a section loop to prevent infinite render
-    if (state.sectionLoop) { return false }
-
-    // always open a block, return true in validation mode
-    if (silent) { return true }
+  const plugin = (state, startLine, endLine, silent) => {
 
     // if it's indented more than 3 spaces, it should be a code block
     if (state.sCount[startLine] - state.blkIndent >= 4) { return false }
 
-    // we check that the line contains the section marker
+    // exit early if inside a section loop to prevent infinite render
+    if (state.innerSection) { return false }
+
+    // always auto open a block section, return true in validation mode
+    if (silent) { return true }
+
+    // define head positions
+    let start = state.bMarks[startLine] + state.tShift[startLine]
+    let max = state.eMarks[startLine]
+    let lineLength = max - start
+    let head = start
+    let isWrapper = false
+    let autoClose = false
+    let openMarkup = ''
+
     let marker = state.src.charCodeAt(head)
-    if (MARKER_CHAR.charCodeAt(0) === marker) {
-      // if true, it isn't a auto opening block anymore
-      auto_open = false
 
-      // we check there is a least <n> markers
-      let mem = head
-      head = state.skipChars(head, marker)
-      let len = head - mem
+    // check if it's a wrapper block (see include plugin)
+    let mem = head
+    head = state.skipChars(head, marker)
+    let len = head - mem
 
-      // store section_open markup
-      open_markup = state.src.slice(mem, head)
+    if (INCLUDE_CHAR === marker
+    && MARKER_LEN <= len
+    && len + 2 <= lineLength) { isWrapper = true }
+
+    // get open markup if the line is a marked line (auto open otherwise)
+    if (MARKER_CHAR === marker || INCLUDE_CHAR === marker) {
+      openMarkup = state.src.slice(start, max)
     }
-
-    // seek for section marker to close the block
+    // seek for a marker to close the block
+    let isEmpty = true
     let nextLine = startLine
-
     for (;;) {
       nextLine++
 
+      if (state.isEmpty(nextLine)) { continue }
+
       // EOF, auto-closing
       if (nextLine >= endLine) {
-        auto_close = true
+        autoClose = true
         break
       }
 
-      // move head
+      // move HEAD
       head = state.bMarks[nextLine] + state.tShift[nextLine]
       max = state.eMarks[nextLine]
 
-      // if line is less than <n> markers, move HEAD to next line
+      // less than <n> markers, move HEAD to next line
       if (head + MARKER_LEN > max) { continue }
 
-      // check the line is at least <n> markers, otherwise move to next line
-      marker = state.src.charCodeAt(head)
-      if (MARKER_CHAR.charCodeAt(0) !== marker) { continue }
+      // check for a marker or a wrapper
+      let marker = state.src.charCodeAt(head)
 
-      mem = head
+      // if opening is a wrapper delimiter, seek for its associated end
+      if (isWrapper && INCLUDE_CHAR !== marker) { continue }
+
+      // test the marker if a section or include marker
+      if (MARKER_CHAR !== marker && INCLUDE_CHAR !== marker) {
+        // prevent empty block section
+        // (e.g. between two successive include markers)
+        isEmpty = false
+        continue
+      }
+
+      // check if there is at least <n> markers
+      let mem = head
       head = state.skipChars(head, marker)
-      len = head - mem
+      let len = head - mem
       if (MARKER_LEN > len) { continue }
 
       // new section found, close the current one
       break
+    }
+
+    // avoid an explicitely opened section w/o content
+    if (isEmpty && !!openMarkup) {
+      state.line = nextLine - 1
+      return true
+    }
+
+    // re-tokenize the wrapper content from zero
+    if (isWrapper) {
+      state.md.block.tokenize(state, startLine + 1, nextLine -1)
+      state.line = nextLine
+      return true
     }
 
     // store state to restore after the loop
@@ -78,7 +103,7 @@ const sections = (md) => {
     let currLineMax = state.lineMax
 
     // update endline to the end of the block
-    endLine = auto_close? endLine : nextLine -1
+    if (!autoClose) { nextLine-- }
 
     // set the section block
     let token
@@ -87,27 +112,28 @@ const sections = (md) => {
     state.lineMax = nextLine
 
     token = state.push('section_open', 'section', 1)
-    token.markup = open_markup
+    token.markup = openMarkup
     token.block = true
-    token.map = [ startLine, endLine]
+    token.map = [ startLine, nextLine]
 
-    state.sectionLoop = true
-    state.md.block.tokenize(state, startLine + (auto_open? 0 : 1), endLine)
+    // set innerSection to prevent infinite render
+    state.innerSection = true
+    state.md.block.tokenize(state, startLine + (!!openMarkup? 1 : 0), nextLine)
 
     token = state.push('section_close', 'section', -1)
     token.block = true
 
     // restore state
-    state.sectionLoop = false
+    state.innerSection = false
     state.parentType = currParent
     state.lineMax = currLineMax
-    state.line = endLine
+    state.line = nextLine
 
     return true
 
   }
 
-  md.block.ruler.before('fence', 'sections', builder)
+  md.block.ruler.before('fence', 'sections', plugin)
 
 }
 

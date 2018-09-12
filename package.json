@@ -19,22 +19,28 @@
   "homepage": "https:talks.m4dz.net",
   "devDependencies": {
     "debug": "^3.1.0",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-block-embed": "0.0.3",
+    "markdown-it-decorate": "^1.2.2",
+    "markdown-it-deflist": "^2.0.3",
+    "markdown-it-implicit-figures": "^0.9.0",
+    "markdown-it-mark": "^2.0.0",
+    "markdown-it-prism": "^1.1.2",
+    "markdown-it-strikethrough-alt": "^1.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-table": "^2.0.4",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-debug": "^1.2.0",
     "metalsmith-env": "^2.0.0",
     "metalsmith-layouts": "^1.8.1",
-    "metalsmith-markdown-partials": "^1.0.0",
-    "metalsmith-markdown-remarkable": "^0.1.1",
+    "metalsmith-markdownit": "^0.5.0",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-serve": "0.0.7",
     "metalsmith-sitemap": "^1.2.0",
     "metalsmith-watch": "^1.0.3",
-    "remarkable": "^1.7.1",
-    "slug-component": "^1.1.0"
-  },
-  "dependencies": {
-    "metalsmith-markdownit": "^0.5.0",
     "pug": "^2.0.0-rc.4"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,4 +1,9 @@
 extends _layout.pug
 
 block content
-  != contents
+  .reveal
+    .slides
+      != contents
+
+  script.
+    window.Reveal && Reveal.initialize()
