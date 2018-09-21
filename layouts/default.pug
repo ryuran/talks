@@ -20,6 +20,9 @@ block content
       != contents
       if who === 'end'
         section.speaker: include _speaker.pug
+      if questions
+        section.interleaf
+          h2 Questions!{lang === 'fr'? '&nbsp;' : ''}?
 
   script.
     window.Reveal && Reveal.initialize({
