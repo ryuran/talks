@@ -18,6 +18,7 @@
   },
   "homepage": "https:talks.m4dz.net",
   "devDependencies": {
+    "date-fns": "^1.29.0",
     "debug": "^3.1.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-block-embed": "0.0.3",
@@ -29,18 +30,23 @@
     "markdown-it-strikethrough-alt": "^1.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
-    "markdown-it-table": "^2.0.4",
     "metalsmith": "^2.3.0",
+    "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.9.0",
+    "metalsmith-components": "^1.0.4",
     "metalsmith-debug": "^1.2.0",
+    "metalsmith-default-values": "^3.0.0",
+    "metalsmith-define": "^2.0.1",
     "metalsmith-env": "^2.0.0",
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-markdownit": "^0.5.0",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-serve": "0.0.7",
     "metalsmith-sitemap": "^1.2.0",
+    "metalsmith-unlisted": "^1.0.0",
     "metalsmith-watch": "^1.0.3",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "reveal.js": "^3.7.0"
   },
   "dependencies": {}
 }

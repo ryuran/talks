@@ -3,31 +3,32 @@ extends _layout.pug
 block content
   != contents
 
-  section(id="recent")
-    h2 Last talks
-    ul
-      each deck in collections.recent
-        li
-          p: a(href=deck.path)= deck.title
-          p
+  if (!!collections.current)
+    section(id="current")
+      h2 Last talks
+      ul
+        each deck in collections.current
+          li
+            p: a(href=deck.path)= deck.title
 
-  section(id="legacy")
-    h2 Legacy talks
-    ul
-      each deck in collections.legacy
-        li
-          p: a(href=deck.path)= deck.title
-          if deck.dates
-            ul
-              each date in deck.dates
-                if (typeof date === 'string')
-                  li= date
-                else
-                  li= date.name
-                    ul
-                      each href, label in date
-                        if (label != 'name')
-                          li: a(href= href)= label
+  if (!!collection.legacy)
+    section(id="legacy")
+      h2 Legacy talks
+      ul
+        each deck in collections.legacy
+          li
+            p: a(href=deck.path)= deck.title
+            if deck.dates
+              ul
+                each date in deck.dates
+                  if (typeof date === 'string')
+                    li= date
+                  else
+                    li= date.name
+                      ul
+                        each href, label in date
+                          if (label != 'name')
+                            li: a(href= href)= label
 
 
   footer

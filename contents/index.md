@@ -2,6 +2,7 @@
 title: m4dz' talks
 layout: index.pug
 permalink: false
+unlisted: true
 ---
 
 # m4dz' talks

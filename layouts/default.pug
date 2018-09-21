@@ -1,9 +1,31 @@
 extends _layout.pug
 
+block head
+  link(rel="stylesheet" href="/assets/css/reveal.css")
+  link(rel="stylesheet" href="/assets/css/white.css")
+  script(src="/assets/js/head.min.js" async=true)
+  script(src="/assets/js/reveal.js" async=true)
+
 block content
   .reveal
     .slides
+      include _cover.pug
       != contents
 
   script.
-    window.Reveal && Reveal.initialize()
+    window.Reveal && Reveal.initialize({
+      slideNumber: true,
+      history: true,
+      fragmentInURL: true,
+      autoPlayMedia: true,
+
+      width: 1280,
+      height: 720,
+
+      dependencies: [
+        { src: '/assets/js/classList.js', condition: () => { !document.body.classList } },
+
+        { src: '/assets/js/plugin/zoom.js', async: true },
+        { src: '/assets/js/plugin/notes.js', async: true }
+      ]
+    })

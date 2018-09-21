@@ -1,0 +1,13 @@
+section.cover
+  .title
+    h1= title
+    if !!subtitle
+      p.subtitle= subtitle
+
+  if dateFns.isToday(new Date(dates[0].date))
+    .date #{dates[0].name} · #[time(datetime=dates[0].date)= dateFns.format(new Date(dates[0].date), 'MMM D, YYYY', {locale: dateFns.locales[lang]})]
+
+  a.speaker(href="https://twitter.com/m4d_z") @m4d_z
+
+  if !!company
+    figure: img(src=`/img/${company}/logo_alpha.svg` alt=`${company} logo`)
