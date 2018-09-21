@@ -9,3 +9,7 @@ dates:
     date: 2018-10-18T13:20-0400
     url: http://connect.tech/
 ---
+
+<!-- .interleaf -->
+
+## Developer's responsibilty

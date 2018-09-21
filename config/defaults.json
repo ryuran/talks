@@ -4,7 +4,10 @@
   "draft": false,
   "thanks": true,
   "who": "end",
-  "company": "alwaysdata",
+  "company": {
+    "name": "alwaysdata",
+    "url": "https://www.alwaysdata.com"
+  },
   "questions": true,
   "collection": "current",
   "pinned": false
