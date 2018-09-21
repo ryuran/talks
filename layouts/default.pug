@@ -1,5 +1,8 @@
 extends _layout.pug
 
+mixin link_to_slides
+  a(href=`${baseurl}/${path}`) #{baseurl}/#{path}
+
 block head
   link(rel="stylesheet" href="/assets/css/reveal.css")
   link(rel="stylesheet" href="/assets/css/white.css")
@@ -9,8 +12,14 @@ block head
 block content
   .reveal
     .slides
-      include _cover.pug
+      section.cover
+        include _cover.pug
+        +link_to_slides
+      if who === 'start'
+        section.speaker: include _speaker.pug
       != contents
+      if who === 'end'
+        section.speaker: include _speaker.pug
 
   script.
     window.Reveal && Reveal.initialize({
