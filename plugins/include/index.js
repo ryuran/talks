@@ -1,8 +1,8 @@
 const path = require('path')
 const fs = require('fs')
 
-MARKER_CHAR = 94 /* ^ */
-MARKER_LEN = 3
+const MARKER_CHAR = 94 /* ^ */
+const MARKER_LEN = 3
 
 // regexp for inclusion tag: +[(tagname)](fileuri)
 const rex = /\+\[(\w*)\]\(([\w\s\d-\/\.]+)\)/gm
