@@ -9,6 +9,7 @@ const Metalsmith = require('metalsmith')
 const defvalues = require('metalsmith-default-values')
 const define = require('metalsmith-define')
 const layouts = require('metalsmith-layouts')
+const env = require('metalsmith-env')
 
 const collections = require('metalsmith-collections')
 const unlisted = require('metalsmith-unlisted')
@@ -62,11 +63,6 @@ markdown.env(page => ({
   basedir: path.resolve(SOURCE)
 }))
 
-const server = require('metalsmith-serve')
-const watcher = require('metalsmith-watch')
-const debug = require('metalsmith-debug')
-const env = require('metalsmith-env')
-
 const meta = require('./config/meta.json')
 const defs = require('./config/defaults.json')
 
@@ -75,14 +71,15 @@ const metalsmith = new Metalsmith(__dirname)
   .source(SOURCE)
   .destination(DIST)
   .ignore([
-    'sections',
-    'whoami',
-    'includes'
+    '**/sections/**/*',
+    '**/includes/*',
+    '_*'
   ])
   .use(defvalues([{
     pattern: '**/*.md',
     defaults: defs
   }]))
+  .use(env())
   .use(define({
     dateFns: {
       locales: {
@@ -100,18 +97,23 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 if (process.env.NODE_ENV === 'development') {
+  const server = require('metalsmith-serve')
+  const watcher = require('metalsmith-watch')
+  const debug = require('metalsmith-debug')
+
   metalsmith
     .use(server({
       verbose: true
     }))
     .use(watcher({
       paths: {
-        '${source}/**/*': true,
-        'layouts/**/*': "**/*",
+        '${source}/*/*.md': true,
+        '${source}/*/sections/**/*.md': '**/*',
+        'layouts/*': '**/*',
       },
       livereload: true
     }))
-    .use(env())
+
     .use(debug())
 }
 
@@ -145,7 +147,9 @@ metalsmith
       }
     }
   }))
-  .use(assets())
+  .use(assets({
+    destination: './assets'
+  }))
 
 if (process.env.NODE_ENV === 'production') {
   metalsmith
