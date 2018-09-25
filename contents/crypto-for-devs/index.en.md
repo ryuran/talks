@@ -10,6 +10,4 @@ dates:
     url: http://connect.tech/
 ---
 
-<!-- .interleaf -->
-
-## Developer's responsibilty
++[section](sections/en/01-responsibility.md)
