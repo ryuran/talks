@@ -8,17 +8,21 @@ const path = require('path')
 const Metalsmith = require('metalsmith')
 const defvalues = require('metalsmith-default-values')
 const define = require('metalsmith-define')
-const layouts = require('metalsmith-layouts')
-const env = require('metalsmith-env')
+
+const multiLanguage = require('metalsmith-multi-language')
+const slug = require('metalsmith-slug')
 
 const collections = require('metalsmith-collections')
 const unlisted = require('metalsmith-unlisted')
+const drafts = require('metalsmith-drafts')
 const permalinks = require('metalsmith-permalinks')
 const sitemap = require('metalsmith-sitemap')
+const redirect = require('metalsmith-redirect')
 
 const components = require('metalsmith-components')
 const assets = require('metalsmith-assets')
 
+const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdownit')({
   html: true,
   breaks: true,
@@ -75,11 +79,12 @@ const metalsmith = new Metalsmith(__dirname)
     '**/includes/*',
     '_*'
   ])
+  // .use(drafts())
+
   .use(defvalues([{
     pattern: '**/*.md',
     defaults: defs
   }]))
-  .use(env())
   .use(define({
     dateFns: {
       locales: {
@@ -91,33 +96,12 @@ const metalsmith = new Metalsmith(__dirname)
     }
   }))
 
-if (process.env.NODE_ENV === 'production') {
-  metalsmith
-    .clean(process.env.NODE_ENV === 'production')
-}
+  .use(multiLanguage({
+    default: meta.locales[0],
+    locales: meta.locales
+  }))
+  .use(slug())
 
-if (process.env.NODE_ENV === 'development') {
-  const server = require('metalsmith-serve')
-  const watcher = require('metalsmith-watch')
-  const debug = require('metalsmith-debug')
-
-  metalsmith
-    .use(server({
-      verbose: true
-    }))
-    .use(watcher({
-      paths: {
-        '${source}/*/*.md': true,
-        '${source}/*/sections/**/*.md': '**/*',
-        'layouts/*': '**/*',
-      },
-      livereload: true
-    }))
-
-    .use(debug())
-}
-
-metalsmith
   .use(collections({
     current: {
       sortBy: 'pinned',
@@ -125,16 +109,17 @@ metalsmith
     }
   }))
   .use(unlisted())
+
   .use(markdown)
   .use(permalinks({
-    pattern: ':title/:lang/',
+    pattern: ':slug/:locale',
     relative: false
   }))
+
   .use(layouts({
-    engine: 'pug',
-    default: 'default.pug'
-    // pattern: '**/*.html'
+    default: 'reveal.pug'
   }))
+
   .use(components({
     'componentDirectory': 'node_modules',
     'components': {
@@ -152,12 +137,35 @@ metalsmith
   }))
 
 if (process.env.NODE_ENV === 'production') {
+  const redirects = require('./config/redirects.json')
+
   metalsmith
+    .use(redirect(redirects))
     .use(sitemap({
-      hostname: meta.siteurl,
+      hostname: meta.baseurl,
       omitIndex: true
     }))
 }
 
+if (process.env.NODE_ENV === 'development') {
+  const server = require('metalsmith-serve')
+  const watcher = require('metalsmith-watch')
+  const debug = require('metalsmith-debug')
+
+  metalsmith
+    .use(server({
+      verbose: true
+    }))
+    .use(watcher({
+      paths: {
+        '**/!(sections/**/)*.md': true,
+        'layouts/*': '**/*'
+      },
+      livereload: true
+    }))
+    .use(debug())
+}
+
 metalsmith
-  .build(function (err) { if (err) throw err })
+  .clean(process.env.NODE_ENV === 'production')
+  .build(err => { if (err) throw err })
