@@ -10,3 +10,7 @@ a.speaker(href="https://twitter.com/m4d_z") @m4d_z
 
 if !!company
   figure: img(src=`/img/${company.name}/logo_alpha.svg` alt=`${company.name} logo`)
+
+if notes
+  aside.notes
+    != notes

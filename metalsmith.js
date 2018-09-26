@@ -8,6 +8,7 @@ const path = require('path')
 const Metalsmith = require('metalsmith')
 const defvalues = require('metalsmith-default-values')
 const define = require('metalsmith-define')
+const propdown = require('metalsmith-propdown')
 
 const multiLanguage = require('metalsmith-multi-language')
 const slug = require('metalsmith-slug')
@@ -111,6 +112,10 @@ const metalsmith = new Metalsmith(__dirname)
     }
   }))
   .use(unlisted())
+  .use(propdown({
+    collection: 'current',
+    property: 'notes'
+  }))
 
   .use(markdown)
   .use(permalinks({
