@@ -32,8 +32,6 @@ const notes = (md) => {
     // is in validation mode, we found a block: exit
     if (silent) { return true }
 
-    console.log('found ???')
-
     // extract open markup
     let open_markup = state.src.slice(start, max)
 
