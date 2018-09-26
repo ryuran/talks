@@ -1,7 +1,4 @@
 {
-  "lang": "en",
-  "archives": false,
-  "draft": false,
   "thanks": true,
   "who": "end",
   "company": {
@@ -9,6 +6,5 @@
     "url": "https://www.alwaysdata.com"
   },
   "questions": true,
-  "collection": "current",
-  "pinned": false
+  "collection": "current"
 }
