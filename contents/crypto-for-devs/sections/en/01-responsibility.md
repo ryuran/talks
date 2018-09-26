@@ -3,6 +3,14 @@
 <!-- {.interleaf} -->
 ## Developer's responsibilty
 
+???
+
+Foo, Bar, Baz
+
+- Foo
+- Bar
+- Baz
+
 ===
 
 ### Password's limit: CKI

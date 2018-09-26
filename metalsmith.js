@@ -32,6 +32,7 @@ const markdown = require('metalsmith-markdownit')({
 
 const include = require('./plugins/include')
 const sections = require('./plugins/sections')
+const notes = require('./plugins/notes')
 const i18n = require('./plugins/i18n')
 
 const abbr = require('markdown-it-abbr')
@@ -49,6 +50,7 @@ const sup = require('markdown-it-sup')
 markdown.parser.use(i18n)
 markdown.parser.use(sections)
 markdown.parser.use(include)
+markdown.parser.use(notes)
 markdown.parser.use(abbr)
 markdown.parser.use(decorate)
 markdown.parser.use(deflist)
