@@ -1,6 +1,6 @@
 ---
 title: m4dz' talks
-layout: index.pug
+layout: home.pug
 permalink: false
 unlisted: true
 ---

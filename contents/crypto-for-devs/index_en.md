@@ -2,6 +2,7 @@
 title: Cryptography for newcomers
 subtitle: The hitchhiker's guide to cipher in devs
 description: All the answers you always expected about cryptography, from scratch, for everyone
+slug: crypto-for-newcommers
 pinned: true
 dates:
   - name: Connect.Tech

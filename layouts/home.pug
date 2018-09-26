@@ -8,8 +8,8 @@ block content
       h2 Last talks
       ul
         each deck in collections.current
-          li
-            p: a(href=deck.path)= deck.title
+          if deck.locale == 'en' || (deck.locale == 'fr' && !deck.altFiles.en)
+            li: a(href=deck.path)= deck.title
 
   if (!!collection.legacy)
     section(id="legacy")
