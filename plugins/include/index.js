@@ -150,7 +150,7 @@ const include = (md) => {
 
   // insert the injection parser before the core analyze the md
   md.core.ruler.before('normalize', 'include', include)
-  // render the inclusion tags before the sections blocjks (see sections plugin)
+  // render the inclusion tags before the sections blocks (see sections plugin)
   md.block.ruler.before('sections', 'include', plugin)
 
 }
