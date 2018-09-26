@@ -81,7 +81,7 @@ const metalsmith = new Metalsmith(__dirname)
     '**/includes/*',
     '_*'
   ])
-  // .use(drafts())
+  .use(drafts())
 
   .use(defvalues([{
     pattern: '**/*.md',
