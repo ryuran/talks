@@ -165,7 +165,8 @@ if (process.env.NODE_ENV === 'development') {
     }))
     .use(watcher({
       paths: {
-        '**/!(sections/**/)*.md': true,
+        '${source}/**/!(sections/)*.md': true,
+        '${source}/**/sections/**/*.md': '**/*.md',
         'layouts/*': '**/*'
       },
       livereload: true

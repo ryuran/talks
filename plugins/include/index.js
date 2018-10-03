@@ -28,14 +28,14 @@ const include = (md) => {
       if (!contents.has(filePath)
       || fs.statSync(filePath).mtime > contents.get(filePath).mtime) {
         let content = fs.readFileSync(filePath, 'utf8')
-        content.mtime = new Date()
-        contents.set(filePath, content)
+        let mtime = new Date()
+        contents.set(filePath, {content, mtime})
       }
 
       // inject file content in state.src
       let src = [
         state.src.slice(0, extract['index'] -1),
-        contents.get(filePath),
+        contents.get(filePath).content,
         state.src.slice(extract['index'] + len + 1, state.src.length)
       ]
 
