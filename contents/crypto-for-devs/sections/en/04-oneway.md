@@ -63,7 +63,7 @@ When I look up for salting technics, I often find things like this. Those lines 
 
 The Good!
 
-1. Generate a **long salt** w/ [CSPRNG]
+1. Generate a **long salt** w/ CSPRNG
    - min 16 chars
    - `mcrypt_create_iv` (PHP), `os.urandom` (Python), SecureRandom (Ruby), `crypto.randomBytes` (Node.js)
    - `/dev/urandom`

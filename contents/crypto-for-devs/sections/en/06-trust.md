@@ -55,7 +55,7 @@ This key-exchange pattern is called _key wrapping_ and take both of the two worl
 
 ===
 
-![Gif: PGP]
+![Gif: PGP]()
 
 ???
 

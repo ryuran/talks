@@ -27,7 +27,7 @@ If you're working in a low-level environment, then rely on your operating system
 - Ruby: RbNaCl
 - Node.js: Crypto built-in module
 - PHP: Mcrypt
-- Java: [JCE] Framework
+- Java: JCE Framework
 
 *[JCE]: Java Cryptography Extension
 
@@ -84,6 +84,7 @@ But **implementors** choose which ones!
 <!--{p:.fragment.fade-in}-->
 
 Do you remember `canPlayType`?
+<!--{p:.fragment.fade-in}-->
 
 ???
 

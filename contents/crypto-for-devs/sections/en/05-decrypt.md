@@ -69,8 +69,8 @@ One big problem is finally pretty simple to explain: computers, thanks to their 
 ### Padding, Randomness, IV
 
 - unpredictible, non-deterministic values
-- [CSPRNG] functions ::rather than direct `/dev/urandom` access::<!--{li:.fragment.fade-in}-->
-- IV (Initialization Vector) ::bytes-blocks used to init a cipher function and ensure they are really unique::<!--{li:.fragment.fade-in}-->
+- CSPRNG functions ::rather than direct `/dev/urandom` access:: <!--{span:.font-xs}--> <!--{li:.fragment.fade-in}-->
+- IV (Initialization Vector) ::bytes-blocks used to init a cipher function and ensure they are really unique:: <!--{.font-xs}--> <!--{li:.fragment.fade-in}-->
 
 ???
 
@@ -122,7 +122,7 @@ Here's how it works. I keep the private key (in my pocket), and distribute my pu
 
 ===
 
-![Gif: That's a bingo!]
+![Gif: That's a bingo!]()
 
 ???
 
