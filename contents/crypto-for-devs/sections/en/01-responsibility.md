@@ -1,6 +1,6 @@
-<!-- { section^1: data-breadcrumb="Developer's responsibility" } -->
+<!--{section^1:data-breadcrumb="Developer's Responsibility"}-->
 
-<!-- { .interleaf } -->
+<!--{.interleaf}-->
 ## Developer's responsibilty
 
 ???
@@ -31,11 +31,14 @@ Unfortunately, we can't trust them in return...
 
 ===
 
-### Password's limit: _CKI_ <!-- { .fragment .fade-out data-fragment-id="1" } --> _Chair Keyboard Interface_ <!-- { .fragment .fade-in data-fragment-id="1" } -->
+### Password's limit
 
-- [The Scary Truth About Your Passwords - Lastpass blog - 2014][1]
-- [Worst passwords of 2017, Top 100 - Splashdata - 2017][2]
-<!-- { ul: .linkrolls } -->
+_CKI_ <!--{.fragment.fade-out data-fragment-index="1"}-->
+_Chair Keyboard Interface_ <!--{.fragment.fade-in data-fragment-index="1"}-->
+
+- [The Scary Truth About Your Passwords - Lastpass blog - 2014][1.1]
+- [Worst passwords of 2017, Top 100 - Splashdata - 2017][1.2]
+<!--{ul:.linkrolls}-->
 
 ???
 
@@ -81,7 +84,7 @@ Once again, we can't trust our users. We have to protect them. And there's only 
 
 ### Encrypt!
 
-![Deal](https://talks.m4dz.net/crypto-pour-les-devs/deal-with-it.gif)
+![Deal]()
 
 ???
 
@@ -102,5 +105,5 @@ As a developer, we stand at a corner, holding our users' data in our hands, with
 Any sensitive data **must** be transferred and stored in an **encrypted** form
 
 
-[1]: https://blog.lastpass.com/2014/09/the-scary-truth-about-your-passwords-an-analysis-of-the-gmail-leak.html/
-[2]: https://13639-presscdn-0-80-pagely.netdna-ssl.com/wp-content/uploads/2017/12/Top-100-Worst-Passwords-of-2017a.pdf
+[1.1]: https://blog.lastpass.com/2014/09/the-scary-truth-about-your-passwords-an-analysis-of-the-gmail-leak.html/
+[1.2]: https://13639-presscdn-0-80-pagely.netdna-ssl.com/wp-content/uploads/2017/12/Top-100-Worst-Passwords-of-2017a.pdf

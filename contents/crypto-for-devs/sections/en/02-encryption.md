@@ -1,6 +1,6 @@
-<!-- { section^1: data-breadcrumb="Encrypt?" } -->
+<!--{section^1: data-breadcrumb="Encrypt?"}-->
 
-<!-- { .interleaf } -->
+<!--{.interleaf}-->
 ## Encrypt?
 
 ???

@@ -16,7 +16,7 @@ notes: >
 
   It's my first time as a speaker in the USA, so thank you very much for being here.
 
-  Let's talk about ciphers now!
+   Let's talk about ciphers now!
 ---
 
 +[section](sections/en/01-responsibility.md)
@@ -26,3 +26,11 @@ notes: >
 +[section](sections/en/03-cryptanalysis.md)
 
 +[section](sections/en/04-oneway.md)
+
++[section](sections/en/05-decrypt.md)
+
++[section](sections/en/06-trust.md)
+
++[section](sections/en/07-tooling.md)
+
++[section](sections/en/08-conclusion.md)

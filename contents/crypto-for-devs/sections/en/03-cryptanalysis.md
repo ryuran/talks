@@ -1,21 +1,21 @@
-<!-- { section^1: data-breadcrumb="Cryptanalysis" } -->
+<!--{section^1: data-breadcrumb="Cryptanalysis"}-->
 
-<!-- { .interleaf } -->
+<!--{.interleaf}-->
 ## Cryptography & Cryptanalysis
 
 ???
 
-Let's start from the very beginning. Cryptography domain is a war, between cryptographers and cryptanalysts. The former try to make data unreadable; the latter do their best to break the code and get the plain version without knowing the key. When the code is broken, cryptographers enforce their algorithms, that cryptanalysts will try to broke it again, in an endless run.
+Let's start from the very beginning. Cryptography domain is a war, between cryptographers and cryptanalysts. The former try to make data unreadable; the latter do their best to break the code and get the plain version without knowing the key. When the code is broken, cryptographers enforce their algorithms, that cryptanalysts will try to break it again, in an endless run.
 
 ===
 
 ### Once upon a time
 
-[Gif: Alice in Wonderland]()
+![Gif: Alice in Wonderland]()
 
 ???
 
-So, here's a story for you
+So, here's a story for you (because I _love_ stories)
 
 ===
 
@@ -27,11 +27,11 @@ Caesar Cipher
 
 The first know cipher is named _Caesar Cipher_, or _Shift Cipher_. You must know it because you probably played with it when you were kids (approximately at the same time you started to play with lemon juice for invisible telegrams sent to your friends).
 
-It takes 2 alphabets. You rotate the cipher alphabet of shift parameters (let's say 3 here). The shift param is the _key_. Then you substitute characters from the plain alphabet with the corresponding character in the cipher alphabet.
+It takes 2 alphabets. You rotate the cipher alphabet of shift parameter (let's say 3 here). The shift param is the _key_. Then you substitute characters from the plain alphabet with the corresponding character in the cipher alphabet.
 
 Julius Caesar, the Roman Emperor, was the first known to use it in his private correspondence. It is still in use in digital ciphers like ROT13.
 
-The problem with it is its limit: you have only 25 substitutions available (in the 26th one, _A_ stays _A_, so we can't consider it as _strong_). It doesn't take a long time to found the right key and decipher the text.
+The problem with it is its limit: you only have 25 substitutions available (in the 26th one, _A_ stays _A_, so we can't consider it as... _strong_). It doesn't take a long time to find the right key and decipher the text.
 
 ===
 
@@ -77,7 +77,7 @@ Here's what happened. Engima Operators must choose a different key for each tran
 
 ===
 
-**Key* protection is essential
+**Key** protection is essential
 
 ![XKCD Crypto]()
 
@@ -93,7 +93,7 @@ I call this a **Brute Force Attack**. Period.
 
 The 2^nd^ Breach: Spying and Brute Force Attack
 
-There is no pattern strong enough to resist to an attack endlessly
+There is no pattern strong enough to resist to an attack endlessly.
 
 ???
 
@@ -104,6 +104,8 @@ It brings us to the second breach: [...]
 ### Digital Encryption
 
 **Single Token**, the Cipher Graal
+
+![Gif: Sacred Graal]()
 
 ???
 
