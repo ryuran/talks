@@ -42,6 +42,7 @@ const decorate = require('markdown-it-decorate')
 const deflist = require('markdown-it-deflist')
 const embed = require('markdown-it-block-embed')
 const implicitFigures = require('markdown-it-implicit-figures')
+const linkAttrs = require('markdown-it-link-attributes')
 const mark = require('markdown-it-mark')
 const prism = require('markdown-it-prism')
 const smartarrows = require('markdown-it-smartarrows')
@@ -61,6 +62,12 @@ markdown.parser.use(deflist)
 markdown.parser.use(embed)
 markdown.parser.use(implicitFigures, {
   figcaption: true
+})
+markdown.parser.use(linkAttrs, {
+  attrs: {
+    target: '_blank',
+    rel: 'noopener'
+  }
 })
 markdown.parser.use(mark)
 markdown.parser.use(prism)
