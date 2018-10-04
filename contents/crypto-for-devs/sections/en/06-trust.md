@@ -105,9 +105,9 @@ The main inconvenient is that a certificate injected into the chain of trust imm
 
 ### Protect
 
-- Network ::-> ~~SSL~~/TLS, chain of trust:: <!--{span:.fragment.fade-in}-->
-- Passwords ::-> Hashing functions:: <!--{span:.fragment.fade-in}-->
-- Data ::-> Asymmetric Cipher w/ Key Wrapping, HSM:: <!--{span:.fragment.fade-in}-->
+- Network ::--> ~~SSL~~/TLS, chain of trust:: <!--{span:.fragment.fade-in}-->
+- Passwords ::--> Hashing functions:: <!--{.fragment.fade-in}-->
+- Data ::--> Asymmetric Cipher w/ Key Wrapping, HSM:: <!--{.fragment.fade-in}-->
 
 ???
 

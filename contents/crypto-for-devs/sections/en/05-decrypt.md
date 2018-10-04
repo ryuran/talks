@@ -39,8 +39,8 @@ Other well-known options are IDEA or BlowFish. There are many alternatives avail
 ![Gif: Badass]()
 
 - ~~RC4~~
-- ChaCha20 ::?::<!--{.fragment.fade-in data-fragment-index="1"}-->
-- Panama ::?::<!--{.fragment.fade-in data-fragment-index="1"}-->
+- ChaCha20 ::?:: <!--{.fragment.fade-in data-fragment-index="1"}-->
+- Panama ::?:: <!--{.fragment.fade-in data-fragment-index="1"}-->
 
 ???
 
