@@ -28,6 +28,7 @@
     "markdown-it-implicit-figures": "^0.9.0",
     "markdown-it-mark": "^2.0.0",
     "markdown-it-prism": "^1.1.2",
+    "markdown-it-smartarrows": "^1.0.1",
     "markdown-it-strikethrough-alt": "^1.0.0",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
