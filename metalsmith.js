@@ -38,6 +38,7 @@ const span = require('./plugins/span')
 const i18n = require('./plugins/i18n')
 
 const abbr = require('markdown-it-abbr')
+const blocks = require('markdown-it-custom-block')
 const decorate = require('markdown-it-decorate')
 const deflist = require('markdown-it-deflist')
 const embed = require('markdown-it-block-embed')
@@ -57,6 +58,16 @@ markdown.parser.use(include)
 markdown.parser.use(notes)
 markdown.parser.use(span)
 markdown.parser.use(abbr)
+markdown.parser.use(blocks, {
+  giphy(token) {
+    return `<figure class="embed-media__giphy">
+      <video  id="giphy-${token}" autoplay loop muted playsinline>
+        <source src="https://media.giphy.com/media/${token}/giphy.mp4" type="video/mp4">
+        <img src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
+      </video>
+    </figure>`
+  }
+})
 markdown.parser.use(decorate)
 markdown.parser.use(deflist)
 markdown.parser.use(embed)

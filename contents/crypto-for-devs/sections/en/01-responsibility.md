@@ -9,7 +9,7 @@ Before introducing you the cryptography itself, I must start by a word about wha
 
 ===
 
-![Gif: Gollum "my precious"]()
+@[giphy](V4uGHRgz0zi6Y)
 
 ???
 
