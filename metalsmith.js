@@ -1,11 +1,13 @@
 'use strict'
 
-const SOURCE = './contents'
-const DIST = './dist'
+const SOURCE = './src'
+const DIST = './_dist'
 
 const path = require('path')
 
 const Metalsmith = require('metalsmith')
+const branch = require('metalsmith-branch')
+
 const defvalues = require('metalsmith-default-values')
 const define = require('metalsmith-define')
 const propdown = require('metalsmith-propdown')
@@ -22,6 +24,8 @@ const redirect = require('metalsmith-redirect')
 
 const components = require('metalsmith-components')
 const assets = require('metalsmith-assets')
+
+const stylus = require('metalsmith-stylus')
 
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdownit')({
@@ -100,11 +104,12 @@ const metalsmith = new Metalsmith(__dirname)
   .source(SOURCE)
   .destination(DIST)
   .ignore([
-    '**/sections/**/*',
-    '**/includes/*',
-    '_*'
+    'sections',
+    'includes',
+    'layouts',
+    'public',
+    '_*',
   ])
-  .use(drafts())
 
   .use(defvalues([{
     pattern: '**/*.md',
@@ -127,42 +132,57 @@ const metalsmith = new Metalsmith(__dirname)
   }))
   .use(slug())
 
-  .use(collections({
-    current: {
-      sortBy: 'pinned',
-      refer: false
-    }
-  }))
-  .use(unlisted())
-  .use(propdown({
-    collection: 'current',
-    property: 'notes'
-  }))
+  .use(branch('**/*.md')
+    .use(drafts())
+    .use(collections({
+      current: {
+        sortBy: 'pinned',
+        refer: false
+      }
+    }))
+    .use(unlisted())
+    .use(propdown({
+      collection: 'current',
+      property: 'notes'
+    }))
 
-  .use(markdown)
-  .use(permalinks({
-    pattern: ':slug/:locale',
-    relative: false
-  }))
+    .use(markdown)
+    .use(permalinks({
+      pattern: ':slug/:locale',
+      relative: false
+    }))
 
-  .use(layouts({
-    default: 'reveal.pug'
-  }))
+    .use(layouts({
+      directory: `${SOURCE}/layouts`,
+      default: 'reveal.pug'
+    }))
+  )
+
+  .use(branch('css/**/*.styl')
+    .use(stylus({
+      compress: true,
+      define: {
+        // Inline images as base64
+        // url: stylus.url()
+      }
+    }))
+  )
 
   .use(components({
     'componentDirectory': 'node_modules',
     'components': {
       'reveal.js': {
-        'css/**/*.css': 'assets/css/',
-        'js/*.js': 'assets/js',
-        'lib/js/*.js': 'assets/js',
-        'plugin/zoom-js': 'assets/js/plugin',
-        'plugin/notes': 'assets/js/plugin'
-      }
+        'css/**/*.css': 'css/reveal/',
+        'js/*.js': 'js',
+        'lib/js/*.js': 'js',
+        'plugin/zoom-js': 'js/plugins',
+        'plugin/notes': 'js/plugins'
+      },
     }
   }))
   .use(assets({
-    destination: './assets'
+    source: `${SOURCE}/public`,
+    destination: '.'
   }))
 
 if (process.env.NODE_ENV === 'production') {
@@ -187,9 +207,10 @@ if (process.env.NODE_ENV === 'development') {
     }))
     .use(watcher({
       paths: {
-        '${source}/*/*.md': true,
+        '${source}/decks/*/*.md': true,
         '${source}/**/sections/**/*.md': '**/*.md',
-        'layouts/*': '**/*.md'
+        '${source}/layouts/*': '**/*',
+        '${source}/css/**/*': '**/*'
       },
       livereload: true
     }))

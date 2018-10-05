@@ -52,16 +52,18 @@ It is the most obscure, unsable spec produced by the W3C. It's a paper from rese
 
 WebCrypto API
 
-```js
-window.crypto.subtle.encrypt(/* ... */)
-  .then(function(encrypted){
-    //returns an ArrayBuffer containing the encrypted data
+```javascript
+window.crypto<span class="fragment fade-in">.subtle</span><span class="fragment fade-in">.encrypt(/* ... */)</span>
+  <span class="fragment fade-in">.then(function(encrypted){
+    <span class="fragment fade-in">//returns an ArrayBuffer containing the encrypted data
     console.log(new Uint8Array(encrypted))
+    </span>
   })
   .catch(function(err){
     console.error(err)
-  })
+  })</span>
 ```
+<!--{.line-numbers}-->
 
 ![Gif: Doubt]()
 
