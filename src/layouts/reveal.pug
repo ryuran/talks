@@ -5,13 +5,15 @@ mixin link_to_slides
 
 block head
   link(rel="stylesheet" href="/css/reveal/reveal.css")
-  link(rel="stylesheet" href="/css/reveal/white.css")
+  link(rel="stylesheet" href="/css/prism-tomorrow.css")
+  link(rel="stylesheet" href="/css/prism-line-numbers.css")
+  link(rel="stylesheet" href="/css/prism-line-highlight.css")
+  link(rel="stylesheet" href="/css/reveal/simple.css")
   link(rel="stylesheet" href="/css/alwaysdata/index.css")
-  //- link(rel="stylesheet" href="/css/prism.css")
-  //- link(rel="stylesheet" href="/css/prism-line-numbers.css")
 
-  script(src="/js/head.min.js" async=true)
-  script(src="/js/reveal.js" async=true)
+  script(src="/js/head.min.js" defer)
+  script(src="/js/reveal.js" defer)
+  script(src="/js/prism.js" defer data-manual)
 
 block content
   .reveal
@@ -29,21 +31,36 @@ block content
           h2 Questions!{lang === 'fr'? '&nbsp;' : ''}?
 
   script.
-    window.Reveal && Reveal.initialize({
-      slideNumber: true,
-      history: true,
-      fragmentInURL: true,
-      autoPlayMedia: true,
+    document.addEventListener('DOMContentLoaded', () => {
+      Reveal.initialize({
+        slideNumber: true,
+        history: true,
+        fragmentInURL: true,
+        autoPlayMedia: true,
 
-      width: 1280,
-      height: 720,
+        width: 1280,
+        height: 720,
 
-      dependencies: [
-        { src: '/js/classList.js', condition: () => { !document.body.classList } },
+        dependencies: [
+          { src: '/js/classList.js', condition() { !document.body.classList } },
 
-        { src: '/js/breadcrumb.js', async: true },
+          { src: '/js/breadcrumb.js', async: true },
+          { src: '/js/fix-pre-attrs.js', async: true },
 
-        { src: '/js/plugins/zoom.js', async: true },
-        { src: '/js/plugins/notes.js', async: true },
-      ]
+          { src: '/js/plugins/zoom.js', async: true },
+          { src: '/js/plugins/notes.js', async: true },
+
+          { src: '/js/plugins/prism-keep-markup.js' },
+          { src: '/js/plugins/prism-line-numbers.js' },
+          { src: '/js/plugins/prism-line-highlight.js' },
+        ]
+      })
+
+      Reveal.addEventListener('ready', function( event ) {
+        Prism.highlightAllUnder(event.currentSlide)
+      })
+
+      Reveal.addEventListener('slidechanged', function( event ) {
+        Prism.highlightAllUnder(event.currentSlide)
+      })
     })

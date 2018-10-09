@@ -32,7 +32,10 @@ const markdown = require('metalsmith-markdownit')({
   html: true,
   breaks: true,
   linkify: true,
-  typographer: true
+  typographer: true,
+  highlight(str, lang) {
+    return str
+  }
 })
 
 const include = require('./plugins/include')
@@ -49,12 +52,10 @@ const embed = require('markdown-it-block-embed')
 const implicitFigures = require('markdown-it-implicit-figures')
 const linkAttrs = require('markdown-it-link-attributes')
 const mark = require('markdown-it-mark')
-const prism = require('markdown-it-prism')
 const smartarrows = require('markdown-it-smartarrows')
 const strikethrough = require('markdown-it-strikethrough-alt')
 const sub = require('markdown-it-sub')
 const sup = require('markdown-it-sup')
-
 
 markdown.parser.use(i18n)
 markdown.parser.use(sections)
@@ -85,7 +86,6 @@ markdown.parser.use(linkAttrs, {
   }
 })
 markdown.parser.use(mark)
-markdown.parser.use(prism)
 markdown.parser.use(smartarrows)
 markdown.parser.use(strikethrough)
 markdown.parser.use(sub)
@@ -178,6 +178,15 @@ const metalsmith = new Metalsmith(__dirname)
         'plugin/zoom-js': 'js/plugins',
         'plugin/notes': 'js/plugins'
       },
+      'prismjs': {
+        'prism.js': 'js',
+        'themes/prism-tomorrow.css': 'css',
+        'plugins/keep-markup/prism-keep-markup.js': 'js/plugins',
+        'plugins/line-numbers/prism-line-numbers.js': 'js/plugins',
+        'plugins/line-numbers/prism-line-numbers.css': 'css',
+        'plugins/line-highlight/prism-line-highlight.js': 'js/plugins',
+        'plugins/line-highlight/prism-line-highlight.css': 'css'
+      }
     }
   }))
   .use(assets({
