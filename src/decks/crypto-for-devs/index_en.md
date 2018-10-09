@@ -10,13 +10,13 @@ dates:
     date: 2018-10-18T13:20-0400
     url: http://connect.tech/
 notes: >
-  Hi Folks!
+  Hi Everyone!
 
-  I'm happy to be here! I gave this talk for the first time 3 years ago. I'm the first one to be surprised by its longevity. More than ever, it's still relevant to talk about cryptography.
+  Thank you for having me today, and thank you for coming.
 
-  It's my first time as a speaker in the USA, so thank you very much for being here.
+  I'm thrilled to give this talk for the first time in the USA at Connect.Tech. I gave it for the first time 3 years ago. I'm still surprised by its longevity, but more than ever, we need to talk about cryptography.
 
-   Let's talk about ciphers now!
+  So, let's talk about ciphers!
 ---
 
 +[section](sections/en/01-responsibility.md)

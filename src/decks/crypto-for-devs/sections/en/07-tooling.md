@@ -1,11 +1,12 @@
 <!--{section^1: data-breadcrumb="Tooling"}-->
 
 <!--{.interleaf}-->
+
 ## Tooling
 
 ???
 
-Now, it's time to talk a bit about how to implement cryptography, especially in modern architectures.
+Let's talk a bit about how to use cryptography, especially in modern architectures.
 
 ===
 
@@ -17,13 +18,15 @@ Now, it's time to talk a bit about how to implement cryptography, especially in 
 
 ???
 
-If you're working in a low-level environment, then rely on your operating system, or low-level libraries, like OpenSSL. You can also use direct access to a cryptographic set of instructions, like Intel's AES-NI; or using a co-processor dedicated to cryptographic tasks. Nevertheless, it's a hard job that requires many security skills.
+If you're working in a low-level environment, you can rely on your operating system modules. You can also use low-level libraries, like OpenSSL. For embedded software you can use processor set of instructions, like Intel's AES-NI. Or use a co-processor dedicated to cryptographic tasks.
+
+Even so, it's a hard job that requires many security skills.
 
 ===
 
 ### Backend languages
 
-- Python: PyCrypto
+- Python: Cryptography / PyCrypto
 - Ruby: RbNaCl
 - Node.js: Crypto built-in module
 - PHP: Mcrypt
@@ -33,14 +36,14 @@ If you're working in a low-level environment, then rely on your operating system
 
 ???
 
-When you work with advanced scripting languages, you've got access to a wide list of extensions dedicated to cryptography. They contain everything you need to hash, encrypt, decrypt, randomly generate, sign, etc. Use them.
+For advanced scripting languages, there's a wide list of extensions dedicated to cryptography. They contain everything you need to hash, encrypt, decrypt, randomly generate, sign, etc. Use them. Always.
 
 ===
 
 ### Browser side
 
-![Gif: Happy]() <!--{.fragment.fade-out data-fragment-index="1"}-->
-![Gif: Sad]() <!--{.fragment.fade-in data-fragment-index="1"}-->
+![Gif: Happy](){.fragment .fade-out data-fragment-index="1"}
+![Gif: Sad](){.fragment .fade-in data-fragment-index="1"}
 
 ???
 
@@ -52,26 +55,26 @@ It is the most obscure, unsable spec produced by the W3C. It's a paper from rese
 
 WebCrypto API
 
-```javascript
-window.crypto<span class="fragment fade-in">.subtle</span><span class="fragment fade-in">.encrypt(/* ... */)</span>
-  <span class="fragment fade-in">.then(function(encrypted){
-    <span class="fragment fade-in">//returns an ArrayBuffer containing the encrypted data
-    console.log(new Uint8Array(encrypted))
-    </span>
+```js {.line-numbers data-line="4,6"}
+window.crypto<span class="fragment fade-in" data-fragment-index="1">.subtle</span><span class="fragment fade-in" data-fragment-index="2">.encrypt(/* ... */)</span>
+  <span class="fragment fade-in" data-fragment-index="3">.then(function(encrypted){
+    <span class="fragment fade-in" data-fragment-index="4">// return an ArrayBuffer containing the encrypted data
+    console.log(new Uint8Array(encrypted))</span>
   })
   .catch(function(err){
     console.error(err)
   })</span>
 ```
-<!--{.line-numbers}-->
 
-![Gif: Doubt]()
+![Gif: Doubt](){.fragment .current-visible data-fragment-index="1"}
 
 ???
 
-Nevertheless, it's an official spec since Jan. 2017, even if the group was dissolved then. The API exposes a root namespace, crypto, which exposes a subtle subnamespace; Probably because it's too subtle to be used by Beotians. No, it's just because Microsoft tried some implementations years ago, and exposed them in the crypto namespace. And you know that we, as web developers, are the only developers that ship code compatible with more than 25 years old interpreter.
+Nevertheless, it's an official spec since Jan. 2017, even if the group was dissolved then.
 
-The hard trick is that all functions exposed by the WebCrypto API use _promises_, and _binary arrays_. So you have to convert a lot of data from and to their binary form to manipulate them. I don't say it's impossible, but it's far than a simple thing.
+The API exposes a root namespace, crypto, which exposes a subtle subnamespace. Probably because it's too subtle to be used by Beotians. Joking. That's because Microsoft tried some crypto implementations in this namespace back in the days.  And you know. We, as web developers, are the only ones that ship code compatible with more than 25 years old interpreter.
+
+The hard trick is that all functions exposed by the WebCrypto API use _promises_, and _binaries_. So you have to convert a lot of data from and to their binary form to manipulate them. I don't say it's impossible, but it's far than a simple thing.
 
 ===
 
@@ -82,15 +85,13 @@ Supported algorithms
 - HMAC
 - SHA-256 / SHA-384 / SHA-512
 
-But **implementors** choose which ones!
-<!--{p:.fragment.fade-in}-->
+But **editors** choose which ones! {.fragment .fade-in}
 
-Do you remember `canPlayType`?
-<!--{p:.fragment.fade-in}-->
+Do you remember `canPlayType`? {.fragment .fade-in}
 
 ???
 
-The spec officially supports a lot of modern, robust algorithms. Unfortunately, no one is mandatory. Browsers implementors choose which one to include in their browser. You have to test each one to know if it is supported or not.
+The spec officially supports a lot of modern ciphers. Unfortunately, no one is mandatory. Browsers editors choose which one to include in their browser. You have to test each one to know if it is supported or not.
 
 Do you remember _can play type_? The _HTML media_ element has a _can play type_ function, allowing you to ask if the browser supports your media format. This function can return a boolean (true/false); or _maybe_; or _probably_. Funny, right? That's when your browser can't read the media by itself but can expect the OS can do it directly. Same thing here: no guarantee your browser supports your cipher.
 
@@ -105,20 +106,10 @@ Browser libs
 - jwcrypto
 - CryptoJS
 - ...
-
-<!-- --- -->
-
+<!-- -->
 - [gist://jo/8619441](https://gist.github.com/)
-<!--{ul:.linkrolls}-->
+{.linkrolls}
 
 ???
 
-When I gave this talk the first time, three years ago, I said: "I hope we will see high-level API coming soon, like a _JQuery for crypto_." Here it is! There are now many JS libs based on WebCrypto, that allow you to manipulate ciphers in the browser. You can find a curated list of them in this gist.
-
-===
-
-For Fun: Handshake in the Browser
-
-???
-
-To show you how the WebCrypto API is powerful, here's how to perform a handshake auth based on asymmetric keys.
+When I gave this talk three years ago, I said: "I hope we will see high-level API coming soon, like a _JQuery for crypto_." Here it is! There are now many JS libs based on WebCrypto, that allow you to manipulate ciphers in the browser. You can find a curated list of them in this gist.

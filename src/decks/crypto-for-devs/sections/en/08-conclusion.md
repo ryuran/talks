@@ -1,11 +1,12 @@
 <!--{section^1: data-breadcrumb="So, What Do We Do Now?"}-->
 
 <!--{.interleaf}-->
+
 ## So, what do we do now?
 
 ???
 
-So, time to conclude (because the coffee is cooling right now). What do we do, now?
+So, time to conclude (because the coffee is cooling right now). What do we do?
 
 ===
 
@@ -15,7 +16,7 @@ Never play the sorcerer's apprentice
 
 ???
 
-First: never ever play the sorcerer's apprentice. Cryptography is a hard job, dedicated to maths, which require many skills that most people can't pretend to have, myself included. Don't try to reinvent the wheel, be confident to crypto-developers, and use their open source work.
+First: never ever play the sorcerer's apprentice. Cryptography is a hard job, dedicated to maths. It requires many skills that most people can't pretend to have, myself included. Don't try to reinvent the wheel. Be confident to crypto-developers, and use their open source work.
 
 ===
 
@@ -36,10 +37,10 @@ Stop being scared, and protect
 
 ???
 
-My last slide is about this Reddit post. It came when Ashley Madison, the dating platform, leaked its database with personal data about its customers.
+My last slide is about this Reddit post. It released during the Ashley Madison leaks. The dating platform's database, with personal data about its customers, became available on the Internet
 
-This guy said that he lived in the USA for studies. He's gay and used Ashley Madison platform for dating. Now, he's returned in its country, Saudi Arabia, where homosexuality is punished by death. He's scared for his life now because the data leak can reveal who he is, what is its sexual orientation, and where he lives.
+This guy said that he lived in the USA for studies. He's gay and used Ashley Madison platform to meet people. Now, he's returned in its country, Saudi Arabia, where homosexuality is punished by death. He's scared for his life because the data leak can reveal who he is, what is its sexual orientation, and where he lives.
 
-I don't think that Ashley Madison developers though that sometime they may compromise somebody's life when they wrote their codebase. However, it is. So, even if security isn't a simple thing, it's time to stop to be scared, and to protect.
+I'm sure that Ashley Madison's developers didn't though they may compromise somebody's life when they wrote their codebase. But, it is. So, even if security isn't a simple thing, it's time to stop to be scared, and to protect.
 
 Thank you.
