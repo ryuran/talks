@@ -46,6 +46,7 @@ const i18n = require('./plugins/i18n')
 
 const abbr = require('markdown-it-abbr')
 const blocks = require('markdown-it-custom-block')
+const attrs = require('markdown-it-attrs')
 const decorate = require('markdown-it-decorate')
 const deflist = require('markdown-it-deflist')
 const embed = require('markdown-it-block-embed')
@@ -73,6 +74,7 @@ markdown.parser.use(blocks, {
     </figure>`
   }
 })
+markdown.parser.use(attrs)
 markdown.parser.use(decorate)
 markdown.parser.use(deflist)
 markdown.parser.use(embed)
