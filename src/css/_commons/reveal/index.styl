@@ -1,0 +1,31 @@
+body
+  background-color: background-color
+
+.reveal
+  font-family: font-family
+  font-size: font-size
+  font-weight: font-weight
+  color: color
+
+::selection
+  color: selection-color
+  background: selection-background
+  text-shadow: none
+
+::-moz-selection
+  color: selection-color
+  background: selection-background
+  text-shadow: none
+
+.reveal
+  @import 'blocks'
+  @import 'header'
+  @import 'lists'
+  @import 'table'
+  @import 'inline'
+  @import 'link'
+  @import 'controls'
+
+@media print
+  .backgrounds
+      background-color: background-color

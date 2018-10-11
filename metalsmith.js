@@ -174,7 +174,7 @@ const metalsmith = new Metalsmith(__dirname)
     'componentDirectory': 'node_modules',
     'components': {
       'reveal.js': {
-        'css/**/*.css': 'css/reveal/',
+        'css/reveal.css': 'css',
         'js/*.js': 'js',
         'lib/js/*.js': 'js',
         'plugin/zoom-js': 'js/plugins',
@@ -182,12 +182,15 @@ const metalsmith = new Metalsmith(__dirname)
       },
       'prismjs': {
         'prism.js': 'js',
-        'themes/prism-tomorrow.css': 'css',
         'plugins/keep-markup/prism-keep-markup.js': 'js/plugins',
         'plugins/line-numbers/prism-line-numbers.js': 'js/plugins',
-        'plugins/line-numbers/prism-line-numbers.css': 'css',
+        'plugins/line-numbers/prism-line-numbers.css': 'css/prism',
         'plugins/line-highlight/prism-line-highlight.js': 'js/plugins',
-        'plugins/line-highlight/prism-line-highlight.css': 'css'
+        'plugins/line-highlight/prism-line-highlight.css': 'css/prism'
+      },
+      'prism-themes': {
+        'themes/prism-a11y-dark.css': 'css/prism',
+        'themes/prism-ghcolors.css': 'css/prism'
       }
     }
   }))

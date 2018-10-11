@@ -57,11 +57,11 @@ WebCrypto API
 
 ```js {.line-numbers data-line="4,6"}
 window.crypto<span class="fragment fade-in" data-fragment-index="1">.subtle</span><span class="fragment fade-in" data-fragment-index="2">.encrypt(/* ... */)</span>
-  <span class="fragment fade-in" data-fragment-index="3">.then(function(encrypted){
+  <span class="fragment fade-in" data-fragment-index="3">.then(encrypted => {
     <span class="fragment fade-in" data-fragment-index="4">// return an ArrayBuffer containing the encrypted data
     console.log(new Uint8Array(encrypted))</span>
   })
-  .catch(function(err){
+  .catch(err => {
     console.error(err)
   })</span>
 ```

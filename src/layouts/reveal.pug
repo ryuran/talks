@@ -1,15 +1,10 @@
 extends _layout.pug
 
 mixin link_to_slides
-  a(href=`${baseurl}/${path}`) #{baseurl}/#{path}
+  a.permalink(href=`${baseurl}/${path}`) #{baseurl}/#{path}
 
 block head
-  link(rel="stylesheet" href="/css/reveal/reveal.css")
-  link(rel="stylesheet" href="/css/prism-tomorrow.css")
-  link(rel="stylesheet" href="/css/prism-line-numbers.css")
-  link(rel="stylesheet" href="/css/prism-line-highlight.css")
-  link(rel="stylesheet" href="/css/reveal/simple.css")
-  link(rel="stylesheet" href="/css/alwaysdata/index.css")
+  link(rel="stylesheet" href="/css/alwaysdata/dark-dark.css")
 
   script(src="/js/head.min.js" defer)
   script(src="/js/reveal.js" defer)
