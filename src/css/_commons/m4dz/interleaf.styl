@@ -13,10 +13,11 @@
   &[data-background-image] h2
     text-shadow: rgba(0, 0, 0, .8) 3px 5px 2px
 
-.reveal .stack.present .slide-background.interleaf
-  opacity: .5
-  filter: grayscale(.3) saturate(.25) contrast(.8) brightness(1.15) hue-rotate(-210deg)
+  &.slide-background
+    transition: none
+    opacity: .75
+    filter: grayscale(0) saturate(.8) contrast(1) brightness(1) hue-rotate(0deg)
 
-  .slide-background-content
-    background-size: 100% auto
-    background-position: 50% 45%
+    .slide-background-content
+      background-size: 160% auto
+      background-position: top right

@@ -1,4 +1,4 @@
-.reveal section
+.reveal section:not(.thanks)
   h3
   h4
     position: absolute
@@ -25,13 +25,18 @@
     padding: 0 margin
     text-align: left
 
-  // &[class^=cols]
-  //   display: flex
+  .reset
+    margin: margin auto
 
-  // &.cols-2
-  //   p
-  //   ul
-  //   ol
-  //   figure
-  //   pre
-  //     flex 1 50%
+.reveal section
+  [class^=cols]
+    display: flex
+
+  .cols-2 >
+    div
+    p
+    ul
+    ol
+    figure
+    pre
+      flex 1 50%
