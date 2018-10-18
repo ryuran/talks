@@ -71,7 +71,7 @@ markdown.parser.use(blocks, {
       : {token: payload}
 
     return `<figure class="embed-media__giphy ${fragment ? `fragment ${fragment}` : '' }" ${attrs}>
-      <img class="${className}" src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
+      <img class="${className}" data-src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
       ${ caption ? `<figcaption>${caption}</figcaption>` : '' }
     </figure>`
   }
