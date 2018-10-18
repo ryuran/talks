@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="Tooling"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/617456.jpg"}-->
+<!-- Photo by Lachlan Donald on Unsplash -->
 
 ## Tooling
 
@@ -31,6 +32,7 @@ Even so, it's a hard job that requires many security skills.
 - Node.js: Crypto built-in module
 - PHP: Mcrypt
 - Java: JCE Framework
+{.x-large}
 
 *[JCE]: Java Cryptography Extension
 
@@ -42,8 +44,7 @@ For advanced scripting languages, there's a wide list of extensions dedicated to
 
 ### Browser side
 
-![Gif: Happy](){.fragment .fade-out data-fragment-index="1"}
-![Gif: Sad](){.fragment .fade-in data-fragment-index="1"}
+@[giphy]({"token":"yoJC2Olx0ekMy2nX7W","className":"large","caption":"WebCrypto API"})
 
 ???
 
@@ -55,7 +56,7 @@ It is the most obscure, unsable spec produced by the W3C. It's a paper from rese
 
 WebCrypto API
 
-```js {.line-numbers data-line="4,6"}
+```js
 window.crypto<span class="fragment fade-in" data-fragment-index="1">.subtle</span><span class="fragment fade-in" data-fragment-index="2">.encrypt(/* ... */)</span>
   <span class="fragment fade-in" data-fragment-index="3">.then(encrypted => {
     <span class="fragment fade-in" data-fragment-index="4">// return an ArrayBuffer containing the encrypted data
@@ -66,7 +67,7 @@ window.crypto<span class="fragment fade-in" data-fragment-index="1">.subtle</spa
   })</span>
 ```
 
-![Gif: Doubt](){.fragment .current-visible data-fragment-index="1"}
+@[giphy]({"token": "ANbD1CCdA3iI8", "className": "x-small", "fragment": "current-visible", "attrs": "data-fragment-index=1"})
 
 ???
 
@@ -84,10 +85,9 @@ Supported algorithms
 - AES-CBC / AES-GCM / AES-KW
 - HMAC
 - SHA-256 / SHA-384 / SHA-512
+{.large}
 
-But **editors** choose which ones! {.fragment .fade-in}
-
-Do you remember `canPlayType`? {.fragment .fade-in}
+::But ==editors== choose which ones::{.fragment .fade-in} ::(do you remember `canPlayType`?)::{.fragment .fade-in}
 
 ???
 
@@ -106,6 +106,8 @@ Browser libs
 - jwcrypto
 - CryptoJS
 - ...
+{.large}
+
 <!-- -->
 - [gist://jo/8619441](https://gist.github.com/)
 {.linkrolls}

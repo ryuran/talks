@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="Cryptanalysis"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/133200.jpg"}-->
+<!-- Photo by Andrew Neel on Unsplash -->
 
 ## Cryptography & Cryptanalysis
 
@@ -12,7 +13,7 @@ Let's start from the very beginning. We split cryptography into two realms. On t
 
 ### Once upon a time
 
-![Gif: Alice in Wonderland]()
+@[giphy]({"token":"VcizxCUIgaKpa","className":"medium"})
 
 ???
 
@@ -20,7 +21,7 @@ So, here's a story for you (because I _love_ stories):
 
 ===
 
-Caesar Cipher
+#### Caesar Cipher
 
 <!-- SVG ANIM: Shift Cipher Wheel -->
 
@@ -36,7 +37,7 @@ The problem with the _shift cipher_ is the number of combinations: you only have
 
 ===
 
-Vigenère Cipher
+#### Vigenère Cipher
 
 <!-- SVG ANIM: Vigenère Cipher Square -->
 
@@ -54,9 +55,13 @@ Vigenère cipher broke this pattern when the same letter can have plenty of subs
 
 ===
 
-The 1^st^ Breach: Repetitions
+The 1^st^ Breach: ==Repetitions== {.left}
 
-_Frequency Analysis_ defeats any ciphers where a _Common Denominator_ leads to repetitions.
+_Frequency Analysis_
+defeats any ciphers where a
+_Common Denominator_
+leads to repetitions
+<!--{p:.punchline}-->
 
 ???
 
@@ -64,9 +69,9 @@ So this is our first breach: [...]
 
 ===
 
-Enigma
+#### Enigma
 
-![Enigma]()
+![](../img/enigma.jpg){.medium}
 
 ???
 
@@ -74,15 +79,15 @@ Then, back to the last century. This machine is _Enigma_. It's a cipher hardware
 
 Spoiler: I'm French, and it was finally broken; otherwise I would give this talk in German.
 
-We broke it thanks to two events. The first one is that spies stole the plan of the machine. It allowed UK engineers to understand how it works, and try to find a way to decipher its production. The second one is Alan Turing. During War, Majesty Secret Service enrolled scientists to help to decipher transmissions. Turing was one of them. He imagined the first electromechanical computer: _The Bombe_. It automated the decryption of intercepted transmissions. Also, it used... _frequency analysis_!
+We broke it thanks to two events. The first one is that spies stole the plan of the machine. It allowed UK engineers to understand how it worked, and try to find a way to decipher its production. The second one is Alan Turing. During War, Majesty Secret Service enrolled scientists to help to decipher transmissions. Turing was one of them. He imagined the first electromechanical computer: _The Bombe_. It automated the decryption of intercepted transmissions. Also, it used... _frequency analysis_!
 
-Here's what happened. Engima Operators must choose a different key for each transmission. When you're under the bombs, in frontline of operations, stressed, you can't find each time a new passphrase. So Germans are. They tended to use the same passphrase, called _cillies_; Which leads to repetitions. Turing's Bombe applied statistic principles on large amount of ciphertexts. They detected cillies, and finally broke the codes. Another fail for the CKI.
+Here's what happened. Engima Operators needed to choose a different key for each transmission. When you're under the bombs, in frontline of operations, stressed, you can't find each time a new passphrase. So Germans was. They tended to use the same passphrase, called _cillies_; Which lead to repetitions. Turing's Bombe applied statistic principles on large amount of ciphertexts. They detected cillies, and finally broke the codes. Another fail for the CKI.
 
 ===
 
 ==Key== protection is essential
 
-![XKCD Crypto]()
+![xkcd://538](https://imgs.xkcd.com/comics/security.png){.medium}
 
 ???
 
@@ -94,9 +99,10 @@ I call this a **Brute Force Attack**. Period.
 
 ===
 
-The 2^nd^ Breach: Spying and Brute Force Attack
+The 2^nd^ Breach: Spying and Brute Force Attack {.left}
 
 There is no pattern strong enough to resist to an endless attack.
+<!--{p:.punchline}-->
 
 ???
 
@@ -106,9 +112,10 @@ It brings us to the second breach: [...]
 
 ### Digital Encryption
 
-**Single Token**, the Cipher Graal
 
-![Gif: Sacred Graal]()
+@[giphy]({"token": "QhCAwDXZ0BltK", "className": "medium"})
+
+**Single Token**, the Cipher Graal
 
 ???
 

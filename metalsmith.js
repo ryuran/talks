@@ -65,12 +65,17 @@ markdown.parser.use(notes)
 markdown.parser.use(span)
 markdown.parser.use(abbr)
 markdown.parser.use(blocks, {
-  giphy(token) {
-    return `<figure class="embed-media__giphy">
-      <video  id="giphy-${token}" autoplay loop muted playsinline>
+  giphy(payload) {
+    let {token, className, fragment, attrs, caption} = (payload.charCodeAt(0) === 123 /* { */)
+      ? JSON.parse(payload)
+      : {token: payload}
+
+    return `<figure class="embed-media__giphy ${fragment ? `fragment ${fragment}` : '' }" ${attrs}>
+      <video class="${className}" id="giphy-${token}" autoplay loop muted playsinline>
         <source src="https://media.giphy.com/media/${token}/giphy.mp4" type="video/mp4">
         <img src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
       </video>
+      ${ caption ? `<figcaption>${caption}</figcaption>` : '' }
     </figure>`
   }
 })
@@ -191,6 +196,10 @@ const metalsmith = new Metalsmith(__dirname)
       'prism-themes': {
         'themes/prism-a11y-dark.css': 'css/prism',
         'themes/prism-ghcolors.css': 'css/prism'
+      },
+      'gsap': {
+        'src/minified/TweenLite.min.js': 'js',
+        'src/minified/plugins/CSSPlugin.min.js': 'js/plugins'
       }
     }
   }))

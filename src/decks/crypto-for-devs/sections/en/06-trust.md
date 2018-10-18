@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="Trust"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/468174.jpg"}-->
+<!-- Photo by Chunlea on Unsplash -->
 
 ## Keys Exchange, Certificates, Signatures
 
@@ -45,6 +46,7 @@ Using a common public secret, they both can generate the same key on their side 
 3. Concatenate both encrypted part in one message {.fragment .fade-in data-fragment-index="2"}
 4. Decrypt the symmetric key using the private key {.fragment .fade-in data-fragment-index="3"}
 5. Decrypt the message with the symmetric key {.fragment  .fade-in data-fragment-index="3"}
+{.medium}
 
 ???
 
@@ -56,7 +58,7 @@ This key-exchange pattern is called _key wrapping_. It takes both of the two wor
 
 ===
 
-![Gif: PGP]()
+@[giphy]({"token":"WZ4M8M2VbauEo","className":"large","caption":"Pretty Good Privacy"})
 
 ???
 
@@ -108,9 +110,10 @@ The main inconvenient is that it's a centralized chain of trust. We saw this lim
 
 ### Protect
 
-- Network ::--> ~~SSL~~/TLS, chain of trust::{.fragment .fade-in}
-- Passwords ::--> Hashing functions::{.fragment .fade-in}
-- Data ::--> Asymmetric Cipher w/ Key Wrapping, HSM::{.fragment  .fade-in}
+- Network ::--> ~~SSL~~/TLS, chain of trust::{.fragment .typewriter}
+- Passwords ::--> Hashing functions::{.fragment .typewriter}
+- Data ::--> Asymmetric Cipher w/ Key Wrapping, HSM::{.fragment  .typewriter}
+{.large }
 
 ???
 

@@ -57,8 +57,9 @@
     "metalsmith-watch": "^1.0.3"
   },
   "dependencies": {
-    "prismjs": "^1.15.0",
+    "gsap": "^2.0.2",
     "prism-themes": "^1.0.1",
+    "prismjs": "^1.15.0",
     "reveal.js": "^3.7.0"
   }
 }

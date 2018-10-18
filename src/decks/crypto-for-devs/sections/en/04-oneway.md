@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="Hashing, Salting, Cooking"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/789842.jpg"}-->
+<!-- Photo by Hoan Vo on Unsplash -->
 
 ## Hashing, Salting, Cooking
 
@@ -9,8 +10,11 @@
 I said that cryptography is about encryption, and potentially decryption. Let's start with the _basics_: hashing.
 
 ===
+<!--{.x-large}-->
 
-Hashing is Data Obfuscation
+Hashing is
+Data Obfuscation
+<!--{p:.punchline}-->
 
 ???
 
@@ -20,7 +24,7 @@ You already saw some hashing functions, like `md5` or `sha1`.
 
 ===
 
-### Fail
+Fail! {.fragment .stamp}
 
 - Rainbow Tables
 - Lookup Tables
@@ -50,9 +54,14 @@ The Bad, and the Ugly
 
 ```js
 md5(sha1(password))
-md5(md5(salt) + md5(password))
+```
+```js
 sha1(sha1(password))
+```
+```js
 sha1(str_rot13(password + salt))
+```
+```js
 md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
 ```
 
@@ -68,18 +77,21 @@ The Good!
    - min 16 chars
    - `mcrypt_create_iv` (PHP), `os.urandom` (Python), SecureRandom (Ruby), `crypto.randomBytes` (Node.js)
    - `/dev/urandom`
-   {.fragment .fade-out data-fragment-index="1"}
+   {.fragment .fade-out .small data-fragment-index="1"}
 2. Apply a **secured derivation** on `[password][salt]` {.fragment .fade-in data-fragment-index="1"}
    - CPU intensive algorithm
    - Argon2, bcrypt, scrypt, PBKDF2
-   {.fragment .fade-out data-fragment-index="2"}
+   {.fragment .fade-out .small data-fragment-index="2"}
 3. Store **all** elements in database {.fragment .fade-in data-fragment-index="2"}
    - ensure compatibility in case of changes
    - use a format like `$[hashfunc]$[rounds]$[salt][hash]`
-   {.fragment .fade-out data-fragment-index="3"}
+   {.fragment .fade-out .small data-fragment-index="3"}
 4. Store along a **HMAC** digest of the payload {.fragment .fade-in data-fragment-index="3"}
    - prevent SQL Injections
    - keep the key safe
+   {.small}
+
+{.accordion .medium}
 
 - [Salted Password Hashing - Doing it Right][4.1]
 {.linkrolls}
@@ -106,8 +118,10 @@ Finally, to prevent SQL injection that may try to replace a hash record in your 
 If you need more details about this process, read the Crackstation's blog post here.
 
 ===
+<!--{.x-small}-->
 
-A properly hashed password, with **no repetition** and a **time-controlled execution** decrease the risk of brute-force hacking.
+A properly hashed password, with ==no repetition=={.fragment .stabilo} and a ==time-controlled execution=={.fragment .stabilo} decrease the risk of brute-force hacking
+<!--{p:.punchline}-->
 
 ???
 

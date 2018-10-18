@@ -1,0 +1,22 @@
+.reveal .interleaf
+
+  h2
+    position: relative
+    width: 100%
+    top: 8 * margin
+    margin: margin 0
+    top-separator()
+    text-align: left
+    font-family: interleaf-font-family
+    text-transform: capitalize
+
+  &[data-background-image] h2
+    text-shadow: rgba(0, 0, 0, .8) 3px 5px 2px
+
+.reveal .stack.present .slide-background.interleaf
+  opacity: .5
+  filter: grayscale(.3) saturate(.25) contrast(.8) brightness(1.15) hue-rotate(-210deg)
+
+  .slide-background-content
+    background-size: 100% auto
+    background-position: 50% 45%

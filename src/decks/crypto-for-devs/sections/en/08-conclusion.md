@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="So, What Do We Do Now?"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/276850.jpg"}-->
+<!-- Photo by Jason Betz on Unsplash -->
 
 ## So, what do we do now?
 
@@ -12,7 +13,7 @@ So, time to conclude (because the coffee is cooling right now). What do we do?
 
 Never play the sorcerer's apprentice
 
-![Gif: apprenti sorcier]()
+@[giphy]({"token":"xEpTspH9hGwHS","className":"large"})
 
 ???
 
@@ -20,10 +21,11 @@ First: never ever play the sorcerer's apprentice. Cryptography is a hard job, de
 
 ===
 
-Never forget that:
+Never forget that
 
-1. Security has an inverse relation to ease of use
-2. Security has a cost
+1. Security has an inverse relation to the ==ease of use==
+2. Security has a ==cost==
+{.x-large}
 
 ???
 
@@ -31,9 +33,7 @@ Second: never forget that security has an inverse relation to simplicity. The mo
 
 ===
 
-Stop being scared, and protect
-
-![Reddit screenshot]()
+![](../img/reddit.jpg)
 
 ???
 

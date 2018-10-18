@@ -9,6 +9,7 @@ block head
   script(src="/js/head.min.js" defer)
   script(src="/js/reveal.js" defer)
   script(src="/js/prism.js" defer data-manual)
+  script(src="/js/TweenLite.min.js" defer)
 
 block content
   .reveal
@@ -22,7 +23,8 @@ block content
       if who === 'end'
         section.speaker: include _speaker.pug
       if questions
-        section.interleaf
+        section.interleaf(data-background-image="/img/pexels/389962.jpeg")
+          //- Photo by Mikes Photos from Pexels
           h2 Questions!{lang === 'fr'? '&nbsp;' : ''}?
 
   script.
@@ -40,7 +42,9 @@ block content
           { src: '/js/classList.js', condition() { !document.body.classList } },
 
           { src: '/js/breadcrumb.js', async: true },
+          { src: '/js/linkrolls.js', async: true },
           { src: '/js/fix-pre-attrs.js', async: true },
+          { src: '/js/interleaf.js', async: true },
 
           { src: '/js/plugins/zoom.js', async: true },
           { src: '/js/plugins/notes.js', async: true },
@@ -48,6 +52,8 @@ block content
           { src: '/js/plugins/prism-keep-markup.js' },
           { src: '/js/plugins/prism-line-numbers.js' },
           { src: '/js/plugins/prism-line-highlight.js' },
+
+          { src: '/js/plugins/CSSPlugin.min.js', async: true },
         ]
       })
 

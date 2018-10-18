@@ -5,6 +5,10 @@ description: All the answers you always expected about cryptography, from scratc
 slug: crypto-for-newcomers
 pinned: true
 dates:
+  - name: Madslab Test
+    place: Paris, FR
+    date: 2018-10-10
+    url: https://talks.m4dz.net
   - name: Connect.Tech
     place: Atlanta, GA
     date: 2018-10-18T13:20-0400

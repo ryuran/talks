@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="Symmetric And Asymmetric"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/57353.jpg"}-->
+<!-- Photo by drmakete lab on Unsplash -->
 
 ## Symmetric vs. Asymmetric
 
@@ -16,12 +17,13 @@ Let's start with symmetric ciphers. We can split them into two categories:
 
 ### Block Ciphers
 
-![Gif: Blocks Ciphers]
-
 - ~~DES (Data Encryption Standard)~~
 - AES (Advanced Encryption Standard)
 - IDEA
 - BlowFish
+{.medium}
+
+@[giphy]({"token":"PGDgYYGVDk8Qo","className":"small"})
 
 ???
 
@@ -29,7 +31,7 @@ First, the block ciphers. Symmetric ciphers substitute elements in your data blo
 
 Block Ciphers take a data block, and do a shift on it. Then often use more complex variables, where they also do permutations between blocks. They use a fixed length key, and _pad_ it (like we did with the _LEMON_ key) to adapt it to the length of the data blob to encrypt.
 
-You will encounter the DES algorithm a lot. It's the real first one digital cipher algorithm released. It is deprecated for a while now. Its next generation is AES, even if it tends to be weak right now.
+You will encounter the DES algorithm a lot. It's the real first one digital cipher algorithm released. It have been deprecated for a while now. Its next generation is AES, even if it tends to be weak right now.
 
 Other well-known options are IDEA or BlowFish. There are many alternatives available; it depends what and how you need to encrypt data.
 
@@ -37,11 +39,12 @@ Other well-known options are IDEA or BlowFish. There are many alternatives avail
 
 ### Stream Ciphers
 
-![Gif: Badass]()
+@[giphy]({"token": "3o85xmYPgg7QFaJFEk","className":"medium"})
 
 - ~~RC4~~
 - ChaCha20 ::?::{.fragment .fade-in data-fragment-index="1"}
 - Panama ::?::{.fragment .fade-in data-fragment-index="1"}
+{.medium}
 
 ???
 
@@ -55,11 +58,13 @@ RC4 was one of the first stream cipher algorithms and was used in WPA to protect
 
 RC4 is deprecated, and WPA finally came back to AES. You can find stream ciphers alternatives like ChaCha20 or Panama. But they're not reviewed enough to be considered as safe.
 
-One potential candidate to strong stream ciphers is quantum computers. Right now, we are trying to understand what _quantum_ means, so, let's say it's not for tomorrow.
+One potential candidate to strong stream ciphers is quantum computers. Right now, we are still trying to understand what _quantum_ means, so, let's say it's not for tomorrow.
 
 ===
 
-Computers aren't truly **random**
+Computers aren't
+truly ==random==
+<!--{p:.punchline}-->
 
 ???
 
@@ -70,8 +75,9 @@ One big issue with computer is finally pretty simple. Thanks to their processors
 ### Padding, Randomness, IV
 
 - unpredictible, non-deterministic values
-- CSPRNG functions ::rather than direct `/dev/urandom` access::{.font-xs} {.fragment .fade-in}
-- IV (Initialization Vector) ::blocks used to init a cipher function and put it in a unique state::{.font-xs} {.fragment .fade-in}
+- CSPRNG functions ::rather than direct `/dev/urandom` access::{.x-small} {.fragment .fade-in}
+- IV (Initialization Vector) ::blocks used to init a cipher function and put it in a unique state::{.x-small} {.fragment .fade-in}
+{.x-large}
 
 ???
 
@@ -84,6 +90,7 @@ To keep ciphers algorithms semantically secured, we need to introduce entropy. W
 - ~~ECB (Electronic Code Book)~~
 - ~~CBC (Cipher Block Chaining)~~
 - AEAD (Authenticated Encryption with Associated Data)
+{.large}
 
 <!-- -->
 
@@ -101,7 +108,10 @@ ECB and CBC are the most common ones, but they are now easy to break. We now rel
 
 ===
 
-A symmetric **key** must be shared, which mean she could **leak**
+A symmetric ==key==
+must be shared,
+which mean she could **leak**
+<!--{p:.punchline}-->
 
 ???
 
@@ -125,7 +135,7 @@ Here's how it works. I keep the private key (in my pocket), and distribute my pu
 
 RSA or Eliptic Curves?
 
-![Gif: That's a bingo!]()
+@[giphy]({"token":"OrR9ATtSDmd8s","className":"large"})
 
 ???
 

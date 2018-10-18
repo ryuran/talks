@@ -1,6 +1,8 @@
 <!--{section^1:data-breadcrumb="Developer's Responsibility"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/570857.jpg"}-->
+<!-- Photo by Thomas Ehling on Unsplash -->
+
 ## Developer's responsibilty
 
 ???
@@ -9,7 +11,7 @@ Before talking about cryptography itself, I must start with a little introductio
 
 ===
 
-@[giphy](V4uGHRgz0zi6Y)
+@[giphy]({"token": "V4uGHRgz0zi6Y", "className": "large"})
 
 ???
 
@@ -21,20 +23,11 @@ As a user, we produce a shitload of data every second. This data belongs to us b
 
 ===
 
-![Gif: Robocop]()
-
-???
-
-So, as an editor, we should put in place better security layers. It's better for our business because it gives to our apps a higher level of confidence. More than anything, it's better _for our users_. We are responsible for their data, and we must take care of it. Users want to trust us for that.
-
-Unfortunately, we can't trust them in return...
-
-===
-
 ### Password's limit
 
-_CKI_{.fragment .fade-out data-fragment-index="1"}
-_Chair Keyboard Interface_{.fragment .fade-in data-fragment-index="1"}
+::CKI::
+::Chair Keyboard Interface::
+{.fragment .fade-over .xx-large}
 
 - [The Scary Truth About Your Passwords - Lastpass blog - 2014][1.1]
 - [Worst passwords of 2017, Top 100 - Splashdata - 2017][1.2]
@@ -55,10 +48,9 @@ So, users get their revenge. They don't wanna be creative when they pick up a ne
 Passwords aren't secured anymore. They never were...
 
 ===
+<!--{.large}-->
 
-I don't care; We don't host sensitive data
-
-![Please, kill me...]()
+@[giphy]({"token": "3orieTLuLv7piizGs8", "className": "large", "caption": "I don't care; We don't host sensitive data"})
 
 ???
 
@@ -78,17 +70,22 @@ So you have in **your** service database both user's e-mail and master passwords
 
 ???
 
+So, as an editor, we should put in place better security layers. It's better for our business because it gives to our apps a higher level of confidence. More than anything, it's better _for our users_. We are responsible for their data, and we must take care of it. Users want to trust us for that.
+
 We are holding a lot of data while the digital world is tempting to access it. It's a war, and we're in frontline. Our best defense holds in one sentence :
 
 ===
 
-Any sensitive data **must** be transferred and stored in an **encrypted** form
+Any sensitive data **must** be
+transferred and stored
+in an **encrypted** form
+<!--{p:.punchline}-->
 
 ===
 
 ### Encrypt!
 
-![Accept]()
+@[giphy]({"token": "g6Pu0MJSVlSbm", "className": "medium"})
 
 ???
 

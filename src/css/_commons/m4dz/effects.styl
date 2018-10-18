@@ -1,0 +1,27 @@
+stabilo()
+  position: relative
+  display: inline-block
+  z-index: 1
+
+  text-shadow: 4px 4px 1px background-color
+
+  &:before, &:after
+    content: ''
+    position: absolute
+    display: block
+    height: 35%
+    width: 105%
+
+  &:before
+    background: alpha(color-highlight, .55)
+    transform: rotate(3deg) skew(-6deg, 0deg)
+    top: .65em
+    left: -4px
+    z-index: -1
+
+  &:after
+    background: alpha(color-highlight, .35)
+    top: .6em
+    right: -6px
+    transform: skew(-10deg, -1deg)
+    z-index: 2

@@ -1,6 +1,7 @@
 <!--{section^1: data-breadcrumb="Encrypt?"}-->
 
-<!--{.interleaf}-->
+<!--{.interleaf data-background-image="/img/unsplash/587583.jpg"}-->
+<!-- Photo by NeONBRAND on Unsplash -->
 
 ## Encrypt?
 
@@ -18,9 +19,7 @@ You can bet that with this kind of product, I had to deep dive into ciphers and 
 
 ===
 
-Ciphers' nightmare
-
-![Gif: panic]()
+@[giphy]({"token": "IPDNR2Gl7Pw7m", "className": "large", "caption": "Ciphers' nightmare"})
 
 ???
 
@@ -42,9 +41,9 @@ Cryptography isn't authentication, security, nor revoking access or authorizatio
 
 ===
 
-### To Serve And To Protect
+Protection {.x-large}
 
-![Gif: Batman]()
+@[giphy]({"token": "Jjgp2soKzIgzS", "className": "large"})
 
 ???
 
@@ -64,8 +63,11 @@ Cryptography is protecting sensitive information from malicious access or use.
 So, cryptography is only about hashing, encryption, key exchange, and signature. Nothing more.
 
 ===
+<!--{.xx-large}-->
 
-### Only The Key Matters
+Only ==The Key==
+Matters
+<!--{p:.punchline}-->
 
 ???
 
