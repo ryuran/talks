@@ -14,8 +14,8 @@
       })
 
       TweenLite.to(background, 10, {
-        backgroundSize: "100% auto",
-        backgroundPosition: "50% 45%",
+        transform: 'scale(1)',
+        backgroundPosition: "50% 40%",
         delay: 0.3
       })
     }
