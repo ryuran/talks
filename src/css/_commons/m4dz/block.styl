@@ -1,0 +1,104 @@
+.reveal
+  ul
+  ol
+    font-size: xx-large
+
+  ul
+    margin-left: 0
+    list-style: none
+
+  section ul li
+    position: relative
+    icon(angle)
+    padding-left: .6em
+
+    &::before
+      position: absolute
+      width: 2em
+      height: 2em
+      top: 0
+      left: -.8em
+
+
+  .punchline
+    margin: margin
+    font-size: xxx-large
+    text-align: left
+
+  .breadcrumb
+  .linkrolls
+    font-size: font-size
+
+  .breadcrumb
+    z-index: 21
+    position: absolute
+    top: 0
+    left: margin
+    right: margin
+
+    text-align: left
+    right-separator()
+
+    font-size: x-small
+    color: lighten(background-color, 30)
+
+    transition-all()
+
+    &.hide
+      hide()
+
+  .linkrolls
+    z-index: 10
+    pointer-events: auto
+
+    position: absolute
+    bottom: 0
+    left: margin
+    right: margin
+
+    margin: 0
+    padding: margin 1.5em .3em
+
+    font-size: small
+
+    icon(globe)
+
+    &::before
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      opacity: .25
+
+    &::before
+      transform: translate(0, -48%)
+
+    &::after
+      left: 1.5em
+      right: 0
+      border-bottom: 2px solid color
+
+    li
+      icon(link)
+
+      &::before
+        position: relative
+        top: 9px
+        left: -3px
+        margin-right: .25em
+        opacity: .25
+
+    &:not(.hide)
+      show()
+      transform: translate(0, 0)
+
+      transition-all()
+      transition-delay: 650ms
+
+    &.hide
+      hide()
+      transform: translate(0, 75%)
+
+  section .linkrolls.hide
+    display: none
