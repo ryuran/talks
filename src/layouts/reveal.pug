@@ -26,6 +26,8 @@ block content
         section.interleaf(data-background-image="/img/pexels/389962.jpeg")
           //- Photo by Mikes Photos from Pexels
           h2 Questions!{lang === 'fr'? '&nbsp;' : ''}?
+      if thanks
+        section.thanks: include _thanks.pug
 
   script.
     document.addEventListener('DOMContentLoaded', () => {
@@ -44,7 +46,7 @@ block content
           { src: '/js/breadcrumb.js', async: true },
           { src: '/js/linkrolls.js', async: true },
           { src: '/js/fix-pre-attrs.js', async: true },
-          { src: '/js/interleaf.js', async: true },
+          { src: '/js/gsap.js', async: true },
 
           { src: '/js/plugins/zoom.js', async: true },
           { src: '/js/plugins/notes.js', async: true },
