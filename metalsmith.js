@@ -71,10 +71,7 @@ markdown.parser.use(blocks, {
       : {token: payload}
 
     return `<figure class="embed-media__giphy ${fragment ? `fragment ${fragment}` : '' }" ${attrs}>
-      <video class="${className}" id="giphy-${token}" autoplay loop muted playsinline>
-        <source src="https://media.giphy.com/media/${token}/giphy.mp4" type="video/mp4">
-        <img src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
-      </video>
+      <img class="${className}" src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
       ${ caption ? `<figcaption>${caption}</figcaption>` : '' }
     </figure>`
   }
