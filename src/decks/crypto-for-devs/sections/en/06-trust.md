@@ -60,7 +60,7 @@ This key-exchange pattern is called _key wrapping_. It takes both of the two wor
 
 ===
 
-@[giphy]({"token":"WZ4M8M2VbauEo","className":"large","caption":"Pretty Good Privacy"})
+@[giphy]({"token":"WZ4M8M2VbauEo","className":"medium","caption":"Pretty Good Privacy"})
 
 ???
 
@@ -115,7 +115,7 @@ The main inconvenient is that it's a centralized chain of trust. We saw this lim
 - Network ::--> ~~SSL~~/TLS, chain of trust::{.fragment .typewriter}
 - Passwords ::--> Hashing functions::{.fragment .typewriter}
 - Data ::--> Asymmetric Cipher w/ Key Wrapping, HSM::{.fragment  .typewriter}
-{.large }
+{.x-large}
 
 ???
 

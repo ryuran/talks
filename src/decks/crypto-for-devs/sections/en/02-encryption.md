@@ -43,7 +43,7 @@ Cryptography isn't authentication, security, nor revoking access or authorizatio
 
 Protection {.x-large}
 
-@[giphy]({"token": "Jjgp2soKzIgzS", "className": "large"})
+@[giphy]({"token": "47KjwlPVpnQOs", "className": "large"})
 
 ???
 
