@@ -7,7 +7,6 @@ src/public/img/unsplash/133200.jpg filter=lfs diff=lfs merge=lfs -text
 src/public/img/unsplash/276850.jpg filter=lfs diff=lfs merge=lfs -text
 src/public/img/unsplash/468174.jpg filter=lfs diff=lfs merge=lfs -text
 src/public/img/pexels/389962.jpeg filter=lfs diff=lfs merge=lfs -text
-src/public/crypto-for-newcomers/img filter=lfs diff=lfs merge=lfs -text
 src/public/crypto-for-newcomers/img/enigma.jpg filter=lfs diff=lfs merge=lfs -text
 src/public/crypto-for-newcomers/img/reddit.jpg filter=lfs diff=lfs merge=lfs -text
 src/public/css/fonts/eot/FiraCode-Light.eot filter=lfs diff=lfs merge=lfs -text
@@ -34,3 +33,7 @@ src/public/css/fonts/woff2 filter=lfs diff=lfs merge=lfs -text
 src/public/css/fonts/woff2/FiraCode-Regular.woff2 filter=lfs diff=lfs merge=lfs -text
 src/public/css/fonts/woff2/Mohave-Light.woff2 filter=lfs diff=lfs merge=lfs -text
 src/public/css/fonts/woff2/Mohave-Regular.woff2 filter=lfs diff=lfs merge=lfs -text
+src/public/crypto-for-newcomers/img/Diffie-Hellman_Key_Exchange.jpg filter=lfs diff=lfs merge=lfs -text
+src/public/crypto-for-newcomers/img/asymmetric-encryption.png filter=lfs diff=lfs merge=lfs -text
+src/public/crypto-for-newcomers/img/shift-cipher-wheel.png filter=lfs diff=lfs merge=lfs -text
+src/public/crypto-for-newcomers/img/vigenere-cipher.jpg filter=lfs diff=lfs merge=lfs -text

@@ -21,7 +21,7 @@ Let's start with symmetric ciphers. We can split them into two categories:
 - AES (Advanced Encryption Standard)
 - IDEA
 - BlowFish
-{.medium}
+{.medium .reset}
 
 @[giphy]({"token":"PGDgYYGVDk8Qo","className":"small"})
 
@@ -39,12 +39,12 @@ Other well-known options are IDEA or BlowFish. There are many alternatives avail
 
 ### Stream Ciphers
 
-@[giphy]({"token": "3o85xmYPgg7QFaJFEk","className":"medium"})
-
 - ~~RC4~~
 - ChaCha20 ::?::{.fragment .fade-in data-fragment-index="1"}
 - Panama ::?::{.fragment .fade-in data-fragment-index="1"}
-{.medium}
+{.medium .reset}
+
+@[giphy]({"token": "3o85xmYPgg7QFaJFEk","className":"medium"})
 
 ???
 
@@ -110,7 +110,7 @@ ECB and CBC are the most common ones, but they are now easy to break. We now rel
 
 A symmetric ==key==
 must be shared,
-which mean she could **leak**
+which means it could **leak**
 <!--{p:.punchline}-->
 
 ???
@@ -124,6 +124,8 @@ So we need another way to deal with encryption.
 ### Bob & Alice
 
 <!-- SVG Anim: RSA -->
+
+![](../img/asymmetric-encryption.png){.large}
 
 ???
 

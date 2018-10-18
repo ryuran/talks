@@ -13,7 +13,7 @@ I said that cryptography is about encryption, and potentially decryption. Let's 
 <!--{.x-large}-->
 
 Hashing is
-Data Obfuscation
+Data ==Obfuscation=={.fragment .stabilo}
 <!--{p:.punchline}-->
 
 ???

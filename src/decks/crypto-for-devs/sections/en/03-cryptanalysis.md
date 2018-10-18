@@ -25,6 +25,8 @@ So, here's a story for you (because I _love_ stories):
 
 <!-- SVG ANIM: Shift Cipher Wheel -->
 
+![Shift Cipher Wheel](../img/shift-cipher-wheel.png){.small}
+
 ???
 
 The first know cipher is _Caesar Cipher_, or _Shift Cipher_. You must know it because you probably played with it when you were kids. It was at the same time you started to play with lemon juice to send invisible telegrams to your friends.
@@ -40,6 +42,15 @@ The problem with the _shift cipher_ is the number of combinations: you only have
 #### Vigenère Cipher
 
 <!-- SVG ANIM: Vigenère Cipher Square -->
+
+![](../img/vigenere-cipher.jpg){.small}
+<!--{figure:.reset}-->
+
+```txt
+Plain text:  ATTACK AT DAWN
+Cipher key:  LEMON<span class="fragment fade-in">L EM ONLE</span>
+Cipher text: <span class="fragment fade-in">L</span><span class="fragment fade-in">X</span><span class="fragment fade-in">F</span><span class="fragment fade-in">OPV EF RNHR</span>
+```
 
 ???
 

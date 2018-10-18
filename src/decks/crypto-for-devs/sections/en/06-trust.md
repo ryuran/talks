@@ -29,6 +29,8 @@ Researchers early found that a system able to use two keys for operations is mor
 
 <!-- SVG ANIM: Diffie Hellman -->
 
+![](../img/Diffie-Hellman_Key_Exchange.jpg){.medium}
+
 ???
 
 During their journey to find a valid public-key cipher, Diffie and Hellman found an alternative. Here's how this key exchange pattern works.

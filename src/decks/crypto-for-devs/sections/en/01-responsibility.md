@@ -3,7 +3,7 @@
 <!--{.interleaf data-background-image="/img/unsplash/570857.jpg"}-->
 <!-- Photo by Thomas Ehling on Unsplash -->
 
-## Developer's responsibilty
+## Developer's responsibility
 
 ???
 
