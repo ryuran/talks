@@ -31,7 +31,7 @@ First, the block ciphers. Symmetric ciphers substitute elements in your data blo
 
 Block Ciphers take a data block, and do a shift on it. Then often use more complex variables, where they also do permutations between blocks. They use a fixed length key, and _pad_ it (like we did with the _LEMON_ key) to adapt it to the length of the data blob to encrypt.
 
-You will encounter the DES algorithm a lot. It's the real first one digital cipher algorithm released. It have been deprecated for a while now. Its next generation is AES, even if it tends to be weak right now.
+You will encounter the DES algorithm a lot. It's the real first one digital cipher algorithm released. It has been deprecated for a while now. Its next generation is AES, even if it tends to be weak right now.
 
 Other well-known options are IDEA or BlowFish. There are many alternatives available; it depends what and how you need to encrypt data.
 

@@ -48,7 +48,7 @@ For advanced scripting languages, there's a wide list of extensions dedicated to
 
 ???
 
-In the browser, there is a spec, produced by the _W3C WebCrypto Woking Group_. I know the group's chairwoman, and when she told me they are working on a spec, I was like this. Then I read the spec.
+In the browser, there is a spec, produced by the _W3C WebCrypto Woking Group_. I know the group's chairwoman, and when she told me they are working on a spec, I was pretty happy. Then I read the spec.
 
 It is the most obscure, unsable spec produced by the W3C. It's a paper from researchers and security experts, for cryptographers. If you're not involved in cryptography, you must give it up.
 

@@ -18,9 +18,9 @@ Data ==Obfuscation=={.fragment .stabilo}
 
 ???
 
-Hashing is _data obfuscation_. It's a one-way trip that encrypts your data without any way to get your plain data back. Because of its inability to decrypt a ciphertext, we often use the term of _checksum control_. A plain text, passing through a given hashing function, always returns the same result. It's a pretty good way to ensure your data wasn't corrupted because a single bit modified in the plain text will output an entirely different result.
+Hashing is _data obfuscation_. It's a one-way trip that encrypts your data preventing from getting your plain data back. Because of its inability to decrypt a ciphertext, we often use the term of _checksum control_. A plain text that passes  through a given hashing function, always output the same result. It's a pretty good way to ensure your data wasn't corrupted because a single bit modified in the plain text will output an entirely different result.
 
-You already saw some hashing functions, like `md5` or `sha1`.
+You know some hashing functions, like `md5` or `sha1`.
 
 ===
 
@@ -32,7 +32,7 @@ Fail! {.fragment .stamp}
 
 ???
 
-It seems to be a best practice to protect the passwords. You never store your users' passwords in a plain format (pleaaaaase), but you must encrypt them in your database. You never need to decrypt them. When your user wants to authenticate, you use the same hashing function you used when he or she signs up and only compare the result to the one stored in the database.
+It seems to be a best practice to protect the passwords. You never store your users' passwords in a plain format. You must encrypt them. You never need to decrypt them. When your user wants to authenticate, you use the same hashing function and compare the output to the one stored in the database at sign up.
 
 Problem is: even if hashing functions are impossible to revert, we know what a plaintext version and its checksum are. That's what we call rainbow, lookup, reverse-lookup, etc. tables. They are big tables, available on many websites, that allow you to check for a checksum and get its plaintext version. For instance, rainbow tables are for the `md5` function. So it's not secured just to store the checksum. We must make the game more complicated to defeat.
 
@@ -46,7 +46,7 @@ Problem is: even if hashing functions are impossible to revert, we know what a p
 
 ???
 
-We need what we call _salting_. We add to the hashing function a _salt_, a little element, unique and randomly generated. It adds noise to the hashing result. It's an entropic factor that ensures your result, for a given password, never be the same. It deprecated rainbow tables, because the checksum won't match any plain password. It also avoids the common factor, which deprecates analysis. BEcasue even when users pick up the same password, their cheksums are differents. It implies that a _salt_ must be unique per password.
+We need what we call _salting_. We add to the hashing function a _salt_, a little element, unique and randomly generated. It adds noise to the hashing result. It's an entropic factor that ensures your result, for a given password, never be the same. It deprecates rainbow tables, because the checksum won't match any plain password. It also avoids the common factor, which deprecates analysis. Even when users pick up the same password, their cheksums are differents. It implies that a _salt_ must be unique per password.
 
 ===
 
@@ -105,7 +105,7 @@ The Good!
 
 The right way to do with password hashing is this one.
 
-First, you create a long random number using a CSPRNG. Please do not rely on _urandom_ directly, except if your language doesn't offer a proper crypto layer.
+First, you create a long random number using a CSPRNG.
 
 Next, you apply a secured derivation on a concatenated string of the password and the salt. What's important here is to use a CPU intensive algorithm. The most secured yet is Argon2.
 
@@ -125,4 +125,4 @@ A properly hashed password, with ==no repetition=={.fragment .stabilo} and a ==t
 
 ???
 
-If you do that, the risks are low, both in case of brute force hacking and in case of database leak. Which doesn't excuse you to alert your users in case of a breach anyway.
+If you do that, the risks are low, both in case of brute force hacking and in case of database leak.

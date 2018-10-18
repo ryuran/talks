@@ -39,7 +39,7 @@ Second: never forget that security has an inverse relation to simplicity. The mo
 
 My last slide is about this Reddit post. It released during the Ashley Madison leaks. The dating platform's database, with personal data about its customers, became available on the Internet
 
-This guy said that he lived in the USA for studies. He's gay and used Ashley Madison platform to meet people. Now, he's returned in its country, Saudi Arabia, where homosexuality is punished by death. He's scared for his life because the data leak can reveal who he is, what is its sexual orientation, and where he lives.
+This guy said that he lived in the USA for studies. He's gay and used Ashley Madison platform to meet people. Now, he's returned in its country, Saudi Arabia, where homosexuality is punished by death. He's scared for his life because the data leak can reveal who he is, what is his sexual orientation, and where he lives.
 
 I'm sure that Ashley Madison's developers didn't though they may compromise somebody's life when they wrote their codebase. But, it is. So, even if security isn't a simple thing, it's time to stop to be scared, and to protect.
 
