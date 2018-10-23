@@ -14,7 +14,7 @@
 ===
 <!--{.xx-large}-->
 
-Drônes
+Drones
 
 ==Linux Kernel ?=={.fragment}
 
@@ -27,7 +27,7 @@ Interfaces conversationnelles
 
 ===
 
-?
+@[giphy]({"token":"BT4ygwV9vgwAU", "className":"large"})
 
 ===
 
