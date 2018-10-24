@@ -1,12 +1,12 @@
 ---
 title: Code & Éthique
 subtitle: Si "Code is Law", à qui incombe l'éthique ?
-description: Our society is going to its future at lightning speed, without taking time to think to this future itself. Responsibility of tech makers considering privacy, user data & social impact.
+description: Notre monde fonce vers son futur à la vitesse de la lumière, sans même se soucier précisément de ce futur. Tour des responsabilités des artisans développeurs en matière de vie privée, de données utilisateur, et d'influence sociétale.
 slug: code-n-ethics
 dates:
   - name: Meilleur Dev de France
     place: Paris, FR
-    date: 2018-10-23T15:30+0200
+    date: 2018-10-23T15:35+0200
     url: https://www.meilleurdevdefrance.com/
 ---
 
