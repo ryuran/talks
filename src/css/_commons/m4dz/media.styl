@@ -8,22 +8,6 @@
       margin-left: auto
       margin-right: auto
 
-    .large
-    .large + figcaption
-      width: 70%
-
-    .medium
-    .medium + figcaption
-      width: 55%
-
-    .small
-    .small + figcaption
-      width: 33%
-
-    .x-small
-    .x-small + figcaption
-      width: 23%
-
     figcaption
       padding: 0 .6em
       text-align: left
@@ -39,6 +23,27 @@
 
       display: flex
       margin-top: -1.15em
+
+  img
+    &.full
+    &.full + figcaption
+      width: 95%
+
+    &.large
+    &.large + figcaption
+      width: 70%
+
+    &.medium
+    &.medium + figcaption
+      width: 55%
+
+    &.small
+    &.small + figcaption
+      width: 33%
+
+    &.x-small
+    &.x-small + figcaption
+      width: 23%
 
   [class^=embed-media]
     video
