@@ -65,7 +65,7 @@ markdown.parser.use(notes)
 markdown.parser.use(span)
 markdown.parser.use(abbr)
 markdown.parser.use(blocks, {
-  giphy(payload) {
+  giphy (payload) {
     let {token, className, fragment, attrs, caption} = (payload.charCodeAt(0) === 123 /* { */)
       ? JSON.parse(payload)
       : {token: payload}
@@ -73,6 +73,26 @@ markdown.parser.use(blocks, {
     return `<figure class="embed-media__giphy ${fragment ? `fragment ${fragment}` : '' }" ${attrs}>
       <img class="${className}" data-src="https://media.giphy.com/media/${token}/giphy.gif" alt="">
       ${ caption ? `<figcaption>${caption}</figcaption>` : '' }
+    </figure>`
+  },
+  tenor(payload) {
+    let { token, className, fragment, attrs, caption } = (payload.charCodeAt(0) === 123 /* { */)
+      ? JSON.parse(payload)
+      : { token: payload }
+
+    return `<figure class="embed-media__giphy ${fragment ? `fragment ${fragment}` : ''}" ${attrs}>
+      <img class="${className}" data-src="https://media1.tenor.com/images/${token}/tenor.gif" alt="">
+      ${ caption ? `<figcaption>${caption}</figcaption>` : ''}
+    </figure>`
+  },
+  gif (payload) {
+    let { href, className, fragment, attrs, caption } = (payload.charCodeAt(0) === 123 /* { */)
+      ? JSON.parse(payload)
+      : { token: payload }
+
+    return `<figure class="embed-media__giphy ${fragment ? `fragment ${fragment}` : ''}" ${attrs}>
+      <img class="${className}" data-src="${href}" alt="">
+      ${ caption ? `<figcaption>${caption}</figcaption>` : ''}
     </figure>`
   }
 })
