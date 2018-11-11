@@ -1,0 +1,22 @@
+/*
+Links
+
+Default link style.
+
+:visited - visited state
+
+Markup:
+<a href="#" class="{{ modifier_class }}">This is a link</a>
+
+Styleguide Bases.Links
+*/
+
+:link {
+  text-decoration: underline;
+  color: #B53;
+}
+
+:visited {
+  text-decoration: underline;
+  color: #389;
+}

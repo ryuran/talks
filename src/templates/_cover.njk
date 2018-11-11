@@ -1,0 +1,27 @@
+<div class="title">
+  <h1>{{ title }}</h1>
+  {% if subtitle %}
+    <p class="subtitle">{{ subtitle }}</p>
+  {% endif %}
+  {% if dates %}
+    {% for event in dates %}
+      {% if event.date|isToday %}
+        <div class="date">{{ event.name }} · {{ event.date|date('MMM D, YYYY', lang) }}</div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  <a class="speaker" href="https://twitter.com/m4d_z">@m4d_z</a>
+</div>
+
+{% if company %}
+  <figure class="company">
+    <img class="plain" src="/img/{{ company.slug }}/logo_alpha.svg" alt="{{ company.name }} logo" />
+  </figure>
+{% endif %}
+
+{% if notes %}
+  <aside class="notes">
+    {{ notes }}
+  </aside>
+{% endif %}

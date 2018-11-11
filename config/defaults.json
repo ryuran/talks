@@ -1,10 +1,15 @@
 {
+  "sitename": "Ryuran talks",
+  "baseurl": "https://ryuran.info/talks",
+  "locales": ["fr"],
   "thanks": true,
   "who": "end",
+  "layout": "reveal.njk",
+  "lang": "fr",
   "company": {
-    "name": "alwaysdata",
-    "url": "https://www.alwaysdata.com"
+    "slug": "clever-age",
+    "name": "Clever Age",
+    "url": "https://www.clever-age.com/"
   },
-  "questions": true,
-  "collection": "current"
+  "questions": true
 }
