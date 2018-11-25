@@ -5,8 +5,8 @@
 {% endset %}
 
 {% block head %}
-  <link rel="stylesheet" href="/css/app.css" />
-  <script src="/js/app.js" async></script>
+  <link rel="stylesheet" href="{% root %}/css/app.css" />
+  <script src="{% root %}/js/app.js" async></script>
 {% endblock %}
 
 {% block html_classes %}{{ [parent(), 'reveal-root']|join(' ') }}{% endblock %}
