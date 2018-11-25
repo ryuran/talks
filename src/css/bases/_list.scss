@@ -1,0 +1,45 @@
+/*
+List
+
+Default style for ordered and unordered lists.
+
+Markup:
+{% for element in ['ul', 'ol'] %}
+  <{{ element }}>
+    {% for i in 0..5 %}
+      <li>Item {{ i }}</li>
+    {% endfor %}
+    <li> An other item but with more text to show you how the list element will look like it a sentence need to go to a new line.</li>
+    <li>
+      <p>Wath if some paragraphs are in the list?</p>
+    </li>
+    <li>
+      <{{ element }}>
+        {% for i in 0..5 %}
+          <li>Item {{ i }}</li>
+        {% endfor %}
+          <li>
+            <{{ element }}>
+              {% for i in 0..5 %}
+                <li>Item {{ i }}</li>
+              {% endfor %}
+            </{{ element }}>
+          </li>
+      </{{ element }}>
+    </li>
+  </{{ element }}>
+{% endfor %}
+
+Style guide: Bases.Lists
+*/
+
+ul,
+ol {
+  margin: 0 0 .75rem;
+  padding: 0 0 0 1em; // dots alignment
+  text-align: left;
+}
+
+li {
+  width: auto;
+}

@@ -1,0 +1,22 @@
+@import './settings/color';
+
+@import './reveal.scss';
+
+@import 'normalize-scss';
+
+@import './bases/fontFace';
+@import './bases/body';
+@import './bases/typography';
+@import './bases/code';
+@import './bases/definitions';
+@import './bases/img';
+@import './bases/link';
+@import './bases/list';
+
+@import './components/alert';
+@import './components/speaker';
+@import './components/thanks';
+@import './components/hljs';
+
+@import './elements/company';
+@import './elements/btn';

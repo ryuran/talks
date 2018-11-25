@@ -1,0 +1,15 @@
+{
+  "source": "src/css",
+  "destination": "_dist/styleguide",
+  "//": "The css and js paths are URLs relative to the style guide destination.",
+  "css": [
+    "/css/app.css"
+  ],
+  "js": [
+    "/js/app.css"
+  ],
+  "title": "Ryuran’s talks Style Guide",
+  "verbose": false,
+  "homepage": "readme.md",
+  "builder": "builder/twig"
+}

@@ -1,0 +1,14 @@
+pre.hljs {
+  display: inline-block;
+  max-width: 100%;
+  padding: .375rem .75rem;
+  border-radius: .375rem;
+
+  code {
+    color: inherit;
+    background: transparent;
+    border-radius: 0;
+  }
+}
+
+@import '~highlight.js/styles/vs2015';

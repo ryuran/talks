@@ -1,0 +1,17 @@
+<div class="speaker">
+  <div class="speaker-figure"><img class="speaker-img" src="{{ img }}" alt=""/></div>
+  <h1 class="speaker-title">
+    <span class="speaker-firstName">{{ firstName }}</span>
+    <span class="speaker-lastName">{{ lastName }}</span>
+  </h1>
+  <div class="speaker-desc">
+    <p>
+      À votre service sur Twitter <a href="https://twitter.com/{{ twitterName }}">@{{ twitterName }}</a><br/>
+      et sur Github <a href="https://github.com/{{ githubName }}">@{{ githubName }}</a>.
+    </p>
+    {% if site is defined %}
+      <p><a href="{{ site.url }}">{{ site.name }}</a></p>
+    {% endif %}
+  </div>
+</div>
+

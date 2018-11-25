@@ -1,0 +1,60 @@
+/*
+Typography
+
+Typographic rules.
+
+Markup: _typography.twig
+
+Styleguide Bases.Typography
+*/
+
+html {
+  font-size: 1em;
+}
+
+body {
+  background-color: white;
+  font-family: 'Share', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0 0 .75rem;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.5rem 0 0.75rem;
+  font-family: 'Patua One', "Arial Black", "Arial Bold", Gadget, sans-serif;;
+  font-weight: normal;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1,
+h2 {
+  line-height: 3rem;
+}
+
+h1 {
+  font-size: 2.441rem;
+}
+
+h2 {font-size: 1.953rem;}
+
+h3,
+h4 {
+  line-height: 2.25rem;
+}
+h3 {
+  font-size: 1.563rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+small {font-size: 1rem;}
