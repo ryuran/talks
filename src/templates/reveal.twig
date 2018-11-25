@@ -5,8 +5,8 @@
 {% endset %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% root %}/css/app.css" />
-  <script src="{% root %}/js/app.js" async></script>
+  <link rel="stylesheet" href="{{ root }}/css/app.css" />
+  <script src="{{ root }}/js/app.js" async></script>
 {% endblock %}
 
 {% block html_classes %}{{ [parent(), 'reveal-root']|join(' ') }}{% endblock %}
@@ -15,29 +15,64 @@
   <div class="reveal">
     <div class="slides">
       <section class="cover">
-        {% include 'layouts/_cover.twig' %}
+        {% include 'components/_intro.twig' with {
+          "title": title,
+          "subtitle": subtitle,
+          "dates": dates,
+          "speaker": speaker,
+          "root": root,
+        } only %}
+
+        {% if company %}
+          {% include 'elements/_company.twig' with company|merge({'root': root}) only %}
+        {% endif %}
+
+        {% if notes %}
+          <aside class="notes">
+            {{ notes }}
+          </aside>
+        {% endif %}
+
         {{ link_to_slides }}
       </section>
       {% if who == 'start' %}
         <section class="speaker">
-          {% include 'components/_speaker.twig' with speaker only %}
+          {% include 'components/_speaker.twig' with speaker|merge({'root': root}) only %}
         </section>
       {% endif %}
       {{ content|raw }}
       {% if who == 'end' %}
         <section class="presentation">
-          {% include 'components/_speaker.twig' with speaker only %}
+          {% include 'components/_speaker.twig' with speaker|merge({'root': root}) only %}
         </section>
       {% endif %}
       {% if questions %}
         <section class="interleaf" data-background-image="/img/pexels/389962.jpeg">
           <!-- Photo by Mikes Photos from Pexels -->
-          <h2>Questions{{ lang == 'fr' ? '&nbsp;'|raw : '' }}?</h2>
+          <h2>Questions ?</h2>
         </section>
       {% endif %}
       {% if thanks %}
         <section class="thanks">
-          {% include '_thanks.twig' %}
+          <h2>Merci !</h2>
+          <ul class="thanks">
+            <li>Fontes
+              <ul>
+                <li>Titres : Patua One</li>
+                <li>Body : Share</li>
+                <li>Code : Share Tech Mono</li>
+              </ul>
+            </li>
+            <li>Outils
+              <p>Code source : <a href="https://github.com/ryuran/talks">https://github.com/ryuran/talks</a></p>
+            </li>
+            <li>Amis
+              <ul>
+                <li>Nicolas Hoizey</li>
+                <li>M4D'z</li>
+                <li>Océane Baron</li>
+            </li>
+          </ul>
         </section>
       {% endif %}
     </div>
