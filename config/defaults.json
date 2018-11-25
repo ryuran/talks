@@ -4,12 +4,23 @@
   "locales": ["fr"],
   "thanks": true,
   "who": "end",
-  "layout": "reveal.njk",
+  "layout": "reveal",
   "lang": "fr",
   "company": {
-    "slug": "clever-age",
+    "img": "/img/cleverage.svg",
     "name": "Clever Age",
     "url": "https://www.clever-age.com/"
+  },
+  "speaker": {
+    "firstName": "Yvain",
+    "lastName": "Liechti",
+    "twitterName": "ryuran78",
+    "githubName": "ryuran",
+    "img": "/img/ryuran-cat.svg",
+    "site": {
+      "url": "https://ryuran.info",
+      "name": "Ryuran.info"
+    }
   },
   "questions": true
 }

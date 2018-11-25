@@ -1,1 +1,61 @@
-@import url('https://fonts.googleapis.com/css?family=Patua+One|Share+Tech+Mono|Share:400,400i,700,700i&subset=latin-ext');
+/* patua-one-regular - latin */
+@font-face {
+  font-family: 'Patua One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Patua One'), local('PatuaOne-Regular'),
+       url('../fonts/patua-one/patua-one-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/patua-one/patua-one-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: optional;
+}
+
+/* share-regular - latin */
+@font-face {
+  font-family: 'Share';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Regular'), local('Share-Regular'),
+       url('../fonts/share/share-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/share/share-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* share-700 - latin */
+@font-face {
+  font-family: 'Share';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Share Bold'), local('Share-Bold'),
+       url('../fonts/share/share-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/share/share-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: optional;
+}
+/* share-italic - latin */
+@font-face {
+  font-family: 'Share';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Share Italic'), local('Share-Italic'),
+       url('../fonts/share/share-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/share/share-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: optional;
+}
+/* share-700italic - latin */
+@font-face {
+  font-family: 'Share';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Share Bold Italic'), local('Share-BoldItalic'),
+       url('../fonts/share/share-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/share/share-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: optional;
+}
+
+/* share-tech-mono-regular - latin */
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech Mono'), local('ShareTechMono-Regular'),
+       url('../fonts/share-tech-mono/share-tech-mono-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/share-tech-mono/share-tech-mono-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: optional;
+}

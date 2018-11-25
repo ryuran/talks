@@ -1,10 +1,20 @@
+const hljs = require('highlight.js');
+
 const md = require('markdown-it')({
   html: true,
   breaks: true,
   linkify: true,
   typographer: true,
-  highlight(str, lang) {
-    return str
+  highlight: (str, lang) => {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `<pre class="hljs"><code class="language-${lang}">${hljs.highlight(lang, str, true).value}</code></pre>`;
+      } catch (error) {
+        console.error(`highlight fail on \`${str}\``, error)
+      }
+    }
+
+    return `<pre class="hljs"><code class="language-${lang}">${md.utils.escapeHtml(str)}</code></pre>`;
   }
 })
 
@@ -46,7 +56,6 @@ md.use(require('markdown-it-custom-block'), {
     </figure>`
   }
 })
-md.use(require('markdown-it-attrs'))
 md.use(require('markdown-it-decorate'))
 md.use(require('markdown-it-deflist'))
 md.use(require('markdown-it-block-embed'))

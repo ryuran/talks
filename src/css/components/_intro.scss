@@ -1,0 +1,16 @@
+// Introductio
+//
+// Introduction for the first slide
+//
+// Markup: ../../templates/components/_intro.twig
+//
+// Style guide: Components.Intro
+
+.intro {
+  text-align: center;
+
+  // &-title {}
+  &-subtitle {
+    font-size: 2em;
+  }
+}

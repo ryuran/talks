@@ -35,6 +35,11 @@ Style guide: Bases.Lists
 
 ul,
 ol {
-  margin: 1em 0;
-  padding: 0 0 0 1.1em; // dots alignment
+  margin: 0 0 .75rem;
+  padding: 0 0 0 1em; // dots alignment
+  text-align: left;
+}
+
+li {
+  width: auto;
 }

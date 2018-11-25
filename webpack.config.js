@@ -9,8 +9,9 @@ module.exports = {
   },
   mode: 'development',
   output: {
-    path: path.join(__dirname, '_dist/js'),
-    filename: '[name].js'
+    path: path.join(__dirname, '_dist/'),
+    filename: 'js/[name].js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -20,29 +21,42 @@ module.exports = {
         use: [
           process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           "css-loader",
-          "sass-loader"
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: [path.join(__dirname, 'node_modules')]
+            }
+          },
         ]
       },
-      { test: /\.(eot|svg|ttf|woff2?)$/, use: ['file-loader'] }
+      {
+        test: /\.(eot|svg|ttf|woff2?)$/, use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              context: ''
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: "css/[name].css",
     }),
     new webpack.ProvidePlugin({
       'Reveal': 'reveal.js',
       'window.Reveal': 'reveal.js'
-    })
+    }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, './_dist'),
+    contentBase: './_dist',
     historyApiFallback: true,
     disableHostCheck: true,
-    noInfo: true,
-    port: 8088
+    port: 8088,
   }
 };

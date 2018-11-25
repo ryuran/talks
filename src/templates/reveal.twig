@@ -1,0 +1,45 @@
+{% extends 'layout.twig' %}
+
+{% set link_to_slides %}
+  <a class="permalink" href="{{ baseurl ~ '/' ~ path }}">{{ baseurl ~ '/' ~ path }}</a>
+{% endset %}
+
+{% block head %}
+  <link rel="stylesheet" href="/css/app.css" />
+  <script src="/js/app.js" async></script>
+{% endblock %}
+
+{% block html_classes %}{{ [parent(), 'reveal-root']|join(' ') }}{% endblock %}
+
+{% block content %}
+  <div class="reveal">
+    <div class="slides">
+      <section class="cover">
+        {% include 'layouts/_cover.twig' %}
+        {{ link_to_slides }}
+      </section>
+      {% if who == 'start' %}
+        <section class="speaker">
+          {% include 'components/_speaker.twig' with speaker only %}
+        </section>
+      {% endif %}
+      {{ content|raw }}
+      {% if who == 'end' %}
+        <section class="presentation">
+          {% include 'components/_speaker.twig' with speaker only %}
+        </section>
+      {% endif %}
+      {% if questions %}
+        <section class="interleaf" data-background-image="/img/pexels/389962.jpeg">
+          <!-- Photo by Mikes Photos from Pexels -->
+          <h2>Questions{{ lang == 'fr' ? '&nbsp;'|raw : '' }}?</h2>
+        </section>
+      {% endif %}
+      {% if thanks %}
+        <section class="thanks">
+          {% include '_thanks.twig' %}
+        </section>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

@@ -5,8 +5,6 @@ const INCLUDE_CHAR = 94 /* ^ */
 const sections = (md) => {
 
   const plugin = (state, startLine, endLine, silent) => {
-    debugger;
-
     // if it's indented more than 3 spaces, it should be a code block
     if (state.sCount[startLine] - state.blkIndent >= 4) { return false }
 
