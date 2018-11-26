@@ -1,7 +1,7 @@
 ### L’attribut `srcet`
 
 - Attribut standard de la balise `<img>`
-- déclare quels variantes de qualité de l’images sont disponibles
+- déclare quels variantes de qualité de l’images sont disponibles
 
 ```html
 <img src="low-res.jpg" srcset="low-res.jpg 1x, high-res.jpg 2x" alt=""/>
@@ -41,15 +41,15 @@ img {
 ```
 
 Le descripteur `x` n’est pas satisfaisant ici,  
-car on envoie une __image plus lourde que nécessaire__ aux petits écrans. <!-- {p:.fragment} -->
+car on envoie une __image plus lourde que nécessaire__ aux petits écrans. <!-- {p:.fragment} -->
 
-Il faut donc pouvoir envoyer une image différente selon l’espace disponible. <!-- {.fragment} -->
+Il faut donc pouvoir envoyer une image différente selon l’espace disponible. <!-- {.fragment} -->
 
 ===
 
 #### Le descripteur `w`
 
-Avec ce descripteur, `srcset` déclare quelles largeurs d’images sont disponibles.
+Avec ce descripteur, `srcset` déclare quelles largeurs d’images sont disponibles.
 
 ```html
 <img src="img200.jpg"
