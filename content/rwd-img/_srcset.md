@@ -7,8 +7,9 @@
 <img src="low-res.jpg" srcset="low-res.jpg 1x, high-res.jpg 2x" alt=""/>
 ```
 
-Quelles que soient la taille du viewport ou la densité de pixel, l’image doit être la même  
-(en termes de contenu/sens), seule la qualité et taille du fichier change.<!-- {p:.alert.alert_warning.fragment} -->
+Quelles que soient la taille du viewport ou la densité de pixel,  
+l’image doit être la même (en termes de contenu/sens),  
+seule la qualité et taille du fichier change.<!-- {p:.alert.alert_warning.fragment} -->
 
 ===
 
