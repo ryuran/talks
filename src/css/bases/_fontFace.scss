@@ -6,7 +6,7 @@
   src: local('Patua One'), local('PatuaOne-Regular'),
        url('../fonts/patua-one/patua-one-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../fonts/patua-one/patua-one-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: optional;
+  font-display: block;
 }
 
 /* share-regular - latin */
@@ -26,7 +26,7 @@
   src: local('Share Bold'), local('Share-Bold'),
        url('../fonts/share/share-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../fonts/share/share-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: optional;
+  font-display: block;
 }
 /* share-italic - latin */
 @font-face {
@@ -36,7 +36,7 @@
   src: local('Share Italic'), local('Share-Italic'),
        url('../fonts/share/share-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../fonts/share/share-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: optional;
+  font-display: block;
 }
 /* share-700italic - latin */
 @font-face {
@@ -46,7 +46,7 @@
   src: local('Share Bold Italic'), local('Share-BoldItalic'),
        url('../fonts/share/share-700italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../fonts/share/share-700italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: optional;
+  font-display: block;
 }
 
 /* share-tech-mono-regular - latin */
@@ -57,5 +57,5 @@
   src: local('Share Tech Mono'), local('ShareTechMono-Regular'),
        url('../fonts/share-tech-mono/share-tech-mono-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('../fonts/share-tech-mono/share-tech-mono-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  font-display: optional;
+  font-display: block;
 }
