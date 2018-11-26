@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '_dist/'),
     filename: 'js/[name].js',
-    publicPath: '/',
+    publicPath: '/talks/',
   },
   module: {
     rules: [
@@ -34,8 +34,9 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
-              context: ''
+              name: '[name].[ext]',
+              context: path.join(__dirname, 'src'),
+              useRelativePath: true,
             }
           }
         ]
@@ -55,6 +56,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './_dist',
+    publicPath: '/talks/',
     historyApiFallback: true,
     disableHostCheck: true,
     port: 8088,
