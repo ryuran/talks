@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '_dist/'),
     filename: 'js/[name].js',
-    publicPath: '/talks/',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -19,7 +19,14 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              publicPath: '../'
+            },
+          },
           "css-loader",
           {
             loader: "sass-loader",
@@ -34,9 +41,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: '[path][name].[ext]',
               context: path.join(__dirname, 'src'),
-              useRelativePath: true,
             }
           }
         ]
@@ -56,7 +62,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './_dist',
-    publicPath: '/talks/',
+    publicPath: '/',
     historyApiFallback: true,
     disableHostCheck: true,
     port: 8088,
