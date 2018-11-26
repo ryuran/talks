@@ -11,6 +11,8 @@ par pixels CSS d’au moins 2.
 
 ???
 
+Ici on parle de pixels en tant que unité de surface (comme le m²)
+
 article de Jérémie Patonnier de 2012
 
 ===

@@ -11,6 +11,10 @@ Quelles que soient la taille du viewport ou la densité de pixel,
 l’image doit être la même (en termes de contenu/sens),  
 seule la qualité et taille du fichier change.<!-- {p:.alert.alert_warning.fragment} -->
 
+???
+
+Pour ce qui est des changement d’image (ratio, contenu) nous verrons plus tard dans cette présentation.
+
 ===
 
 #### Le descripteur `x`
@@ -24,10 +28,6 @@ seule la qualité et taille du fichier change.<!-- {p:.alert.alert_warning.fragm
 L’ordre n’a pas d’importance ici. <!-- {.alert.alert_info.fragment} -->
 
 Mais ce descripteur `x` n’est pertinent que pour les images de dimension CSS fixe. <!-- {p:.fragment} -->
-
-???
-
-notes
 
 ===
 
