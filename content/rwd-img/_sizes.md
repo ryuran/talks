@@ -44,7 +44,7 @@ C’est la __première règle validée__ par le contexte qui sera __appliquée__
 Si mon viewport fait `600px`, que la taille de police racine est de `16px` et que la densité de pixel a un ratio de `1` : <!-- {p:.fragment} -->
 - `600 / 16 = 37.5` donc `< 60em` et `>= 35em` <!-- {li:.fragment} -->
 - `calc(100vw - 2rem)` <!-- {li:.fragment} -->
-- `600 + 2 * 16 = 632` <!-- {li:.fragment} -->
+- `600 - 2 * 16 = 568` <!-- {li:.fragment} -->
 - l’image téléchargée sera `medium.jpg` <!-- {li:.fragment} -->
 
 ???

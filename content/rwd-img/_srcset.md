@@ -56,15 +56,15 @@ Avec ce descripteur, `srcset` déclare quelles largeurs d’image sont disponibl
 srcset="img200.jpg 200w, img600.jpg 600w, img800.jpg 800w" alt="" />
 ```
 
-C’est le navigateur qui va choisir celle qui lui est la plus adaptée selon la __taille d’affichage__, la __densité de pixels__, la qualité de la connexion, les paramètres de l’utilisateur, etc.
+C’est le navigateur qui va choisir celle qui lui est la plus adaptée selon la __taille d’affichage__, la __densité de pixels__, la qualité de la connexion, les paramètres de l’utilisateur, etc.<!-- {p:.fragment} -->
 
 ===
 
 #### Le support
 
 [Non supporté par Internet Explorer](http://caniuse.com/#feat=srcset) mais :
-- fallback natif : l’attribut `src`
-- un polyfill existe : [picturefill](https://scottjehl.github.io/picturefill/)
+- fallback natif : l’attribut `src` <!-- {li:.fragment} -->
+- un polyfill existe : [picturefill](https://scottjehl.github.io/picturefill/) <!-- {li:.fragment} -->
 
 ===
 

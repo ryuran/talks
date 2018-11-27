@@ -46,7 +46,7 @@ Tout comme `background-position`, `object-position` prend 2 valeurs :
 - la position horizontale
 - la position verticale
 
-Les valeurs possibles sont exactement les mêmes que `background-position`. <!-- {.fragment} -->
+Les valeurs possibles sont exactement les mêmes que `background-position`. <!-- {p:.fragment} -->
 
 ===
 

@@ -2,16 +2,19 @@
 
 Les écrans récents des mobiles ont une plus grande densité de pixels.
 
-Depuis l’écran « Retina » de l’iPhone 4 d’Apple, il y a une densité  
-d’au moins 2 pixels physiques pour 1 pixel CSS.
-- Soit 4 fois plus de pixels pour une taille d’écran égale
-- Densité 3 sur l’iPhone 6 plus, soit 9 fois plus de pixels
+Le premier fut l’iPhone 4 d’Apple, avec son écran « retina » de densité 2.
+
+On trouve depuis des écrans de différents ratios de pixels physiques par pixel CSS.
+- 2 : Soit 4 fois plus de pixels pour une taille d’écran égale
+- 3 : (l’iPhone 6 plus par exemple), soit 9 fois plus de pixels
 
 [Un pixel n’est pas un pixel](http://letrainde13h37.fr/21/un-pixel-nest-pas-un-pixel/)
 
 ???
 
 Ici on parle de pixels en tant que unité de surface (comme le m²)
+
+Device pixel ratio
 
 article de Jérémie Patonnier de 2012
 
@@ -40,10 +43,14 @@ Mais n’est pas adapté à de la photo.
 
 ===
 
-### Pour le reste
+### Pour le reste des images
 
 Il a fallu trouver une solution à ajouter aux standards pour répondre à cette problématique.
 
 On parle de `<picture>` mais cela comprend aussi deux nouveaux attributs de `<img>` :
 - `srcset`
 - `sizes`
+
+???
+
+dont on va tout de suite parler

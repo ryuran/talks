@@ -47,7 +47,7 @@ gulp.task('content:assets', () => {
 });
 
 gulp.task('assets', () => {
-  return gulp.src('**/*.{jpg,jpeg,svg,png}' , {cwd: './src'})
+  return gulp.src('**/*.{jpg,jpeg,svg,png,html}' , {cwd: './src'})
     .pipe(gulp.dest(DIST));
 });
 
