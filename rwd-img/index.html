@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="fr" class=" reveal-root"><head>
+    <meta charset="utf-8" />
+    <title>Illustrations Responsive</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link rel="stylesheet" href="../css/app.css" />
+  <script src="../js/app.js" async></script>
+  </head>
+  <body>
+      <div class="reveal">
+    <div class="slides">
+      <section class="cover">
+        <div class="title">
+  <h1>Illustrations Responsive</h1>
+
+      <p class="subtitle">Un des principaux axes d’amélioration de la performance front.</p>
+                      <div class="date">CaenCamp · nov. 27, 2018</div>
+            
+  <a href="https://twitter.com/ryuran78">@ryuran78</a>
+</div>
+
+                  
+<a href="https://www.clever-age.com/" class="company">
+  <img src="../img/cleverage.svg" alt="Clever Age logo" />
+</a>
+        
+        
+          <a class="permalink" href="https://ryuran.info/talks/rwd-img">https://ryuran.info/talks/rwd-img</a>
+
+      </section>
+            <section>
+<section>
+<h2>Introduction</h2>
+<p>Les écrans récents des mobiles ont une plus grande <strong>densité de pixels</strong>.</p>
+<p>Le premier fut l’iPhone 4 d’Apple, avec son écran « retina » de densité 2.</p>
+<p>Depuis, on trouve des écrans de différents ratios de pixels physiques par pixel CSS.</p>
+<ul>
+<li><strong>2 :</strong> Soit <strong>4 fois plus de pixels</strong> pour une taille d’écran égale</li>
+<li><strong>3 :</strong> (l’iPhone 6 plus par exemple), soit <strong>9 fois plus de pixels</strong></li>
+</ul>
+<p><a href="http://letrainde13h37.fr/21/un-pixel-nest-pas-un-pixel/" target="_blank" rel="noopener">Un pixel n’est pas un pixel</a></p>
+<aside class="notes">
+<p>Ici on parle de pixels en tant que unité de surface (comme le m²)</p>
+<p>Device pixel ratio</p>
+<p>article de Jérémie Patonnier de 2012</p>
+</aside>
+</section>
+<section>
+<h3>L’impact sur les images</h3>
+<p>Ces écrans de meilleure qualité demandent donc qu’on leur fournisse des images<br>
+à la hauteur de leurs capacités.</p>
+<p class="fragment">Mais il ne faudrait pas envoyer aux écrans de densité 1<br>
+l’image prévue pour un écran de densité 2 ou 3<br>
+qui serait injustement 4 ou 9 fois plus lourde.</p>
+</section>
+<section>
+<h3>La solution vectorielle</h3>
+<p>SVG (Scalable Vector Graphics) :</p>
+<ul>
+<li>supporté par tous les navigateurs récents,</li>
+<li>idéal pour les icônes, pictogramme ou graphiques,</li>
+<li>responsive (Scalable) par nature</li>
+<li>stylable et même animable</li>
+</ul>
+<p>Mais n’est pas adapté à de la photo.</p>
+</section>
+<section>
+<h3>Pour le reste des images</h3>
+<p>Il a fallu trouver une solution à ajouter aux standards pour répondre à cette problématique.</p>
+<p>On parle de <code>&lt;picture&gt;</code> mais cela comprend aussi deux nouveaux attributs de <code>&lt;img&gt;</code> :</p>
+<ul>
+<li><code>srcset</code></li>
+<li><code>sizes</code></li>
+</ul>
+<aside class="notes">
+<p>dont on va tout de suite parler</p>
+</aside>
+</section>
+</section>
+<section>
+<section>
+<h3>L’attribut <code>srcet</code></h3>
+<ul>
+<li>Attribut standard de la balise <code>&lt;img&gt;</code></li>
+<li>déclare quelles variantes de qualité de l’image sont disponibles</li>
+</ul>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"low-res.jpg"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"low-res.jpg 1x, high-res.jpg 2x"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
+</code></pre>
+<p class="alert alert_warning fragment">Quelles que soient la taille du viewport ou la densité de pixels,<br>
+l’image doit être la même (en termes de contenu/sens),<br>
+seules la qualité et la taille du fichier changent.</p>
+<aside class="notes">
+<p>Pour ce qui est des changement d’image (ratio, contenu) nous verrons plus tard dans cette présentation.</p>
+</aside>
+</section>
+<section>
+<h4>Le descripteur <code>x</code></h4>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"low-res.jpg"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"low-res.jpg 1x, high-res.jpg 2x"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>/&gt;</span>
+</code></pre>
+<ul>
+<li>si le device pixel ratio est supérieur à <code>1</code>, le navigateur téléchargera <code>high-res.jpg</code></li>
+<li>sinon <code>low-res.jpg</code></li>
+</ul>
+<p class="alert alert_info fragment">L’ordre n’a pas d’importance ici.</p>
+<p class="fragment">Mais ce descripteur <code>x</code> n’est pertinent que pour les images de dimension CSS fixe.</p>
+</section>
+<section>
+<p>Typiquement, une image responsive, avec les propriétés CSS suivantes, s’adaptera à la largeur de son conteneur :</p>
+<pre class="hljs"><code class="language-css"><span class="hljs-selector-tag">img</span> {
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: auto;
+}
+</code></pre>
+<p class="fragment">Le descripteur <code>x</code> n’est pas satisfaisant ici,<br>
+car on envoie une <strong>image plus lourde que nécessaire</strong> aux petits viewports.</p>
+<p class="fragment">Il faut donc pouvoir envoyer une image différente selon l’espace disponible.</p>
+</section>
+<section>
+<h4>Le descripteur <code>w</code></h4>
+<p>Avec ce descripteur, <code>srcset</code> déclare quelles largeurs d’image sont disponibles.</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img200.jpg"</span>
+<span class="hljs-attr">srcset</span>=<span class="hljs-string">"img200.jpg 200w, img600.jpg 600w, img800.jpg 800w"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+</code></pre>
+<p class="fragment">C’est le navigateur qui va choisir celle qui lui est la plus adaptée selon la <strong>taille d’affichage</strong>, la <strong>densité de pixels</strong>, la qualité de la connexion, les paramètres de l’utilisateur, etc.</p>
+</section>
+<section>
+<h4>Le support</h4>
+<p><a href="http://caniuse.com/#feat=srcset" target="_blank" rel="noopener">Non supporté par Internet Explorer</a> mais :</p>
+<ul>
+<li class="fragment">fallback natif : l’attribut <code>src</code></li>
+<li class="fragment">un polyfill existe : <a href="https://scottjehl.github.io/picturefill/" target="_blank" rel="noopener">picturefill</a></li>
+</ul>
+</section>
+<section>
+<p>Mais pour que cela soit pertinent, il faut que :</p>
+<ul>
+<li class="fragment">le navigateur sache à quelle taille l’image devra s’afficher,</li>
+<li class="fragment">dès l’interprétation du HTML,</li>
+<li class="fragment">avant même d’interpréter le CSS.</li>
+</ul>
+</section>
+</section>
+<section>
+<section>
+<h3>L’attribut <code>sizes</code></h3>
+<p>Le rôle de l’attribut <code>sizes</code> est de décrire au navigateur quelle va être la largeur d’affichage de l’image en fonction de la taille du viewport.</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"small.jpg"</span>
+<span class="hljs-attr">srcset</span>=<span class="hljs-string">"small.jpg 400w, medium.jpg 700w, large.jpg 1400w"</span>
+<span class="hljs-attr">sizes</span>=<span class="hljs-string">"(min-width: 45em) 700px, 100vw"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+</code></pre>
+</section>
+<section>
+<h4>Valeur par défaut</h4>
+<p>Si l’attribut <code>sizes</code> est omis, il vaux <code>100vw</code>.</p>
+<p>C’est à dire <strong>100 % de la largeur du viewport</strong>.</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"small.jpg"</span>
+<span class="hljs-attr">srcset</span>=<span class="hljs-string">"small.jpg 400w, medium.jpg 700w, large.jpg 1400w"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+</code></pre>
+<p>est équivalent à :</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"small.jpg"</span>
+<span class="hljs-attr">srcset</span>=<span class="hljs-string">"small.jpg 400w, medium.jpg 700w, large.jpg 1400w"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>
+<span class="hljs-attr">sizes</span>=<span class="hljs-string">"100vw"</span> /&gt;</span>
+</code></pre>
+</section>
+<section>
+<h4>Du cas le plus précis au cas par défaut</h4>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"small.jpg"</span>
+<span class="hljs-attr">srcset</span>=<span class="hljs-string">"small.jpg 400w, medium.jpg 700w, large.jpg 1400w"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>
+<span class="hljs-attr">sizes</span>=<span class="hljs-string">"(min-width: 60em) 700px, (min-width: 35em) calc(100vw - 2rem), 100vw"</span> /&gt;</span>
+</code></pre>
+<p>C’est la <strong>première règle validée</strong> par le contexte qui sera <strong>appliquée</strong>.</p>
+<p class="fragment">Si mon viewport fait <code>600px</code>, que la taille de police racine est de <code>16px</code> et que la densité de pixel a un ratio de <code>1</code> :</p>
+<ul>
+<li class="fragment"><code>600 / 16 = 37.5</code> donc <code>&lt; 60em</code> et <code>&gt;= 35em</code></li>
+<li class="fragment"><code>calc(100vw - 2rem)</code></li>
+<li class="fragment"><code>600 - 2 * 16 = 568</code></li>
+<li class="fragment">l’image téléchargée sera <code>medium.jpg</code></li>
+</ul>
+<aside class="notes">
+<p>l’exemple est sur une base de conception mobile first, uniquement des min-width.</p>
+</aside>
+</section>
+<section>
+<h4>Difficultés</h4>
+<ul>
+<li class="fragment">des media-queries dans le HTML</li>
+<li class="fragment">parfois des media-queries destinées à cibler un <code>max-width</code></li>
+<li class="fragment">difficulté à relire, à maintenir</li>
+<li class="fragment">si la mise en page css change, tous les <code>sizes</code> sont à revoir</li>
+</ul>
+<aside class="notes">
+<p>Je conseille de mettre ses breackpoints dans un fichier json qui sera importé par le JavaScript, le moteur de template et le préprocesseur css.</p>
+</aside>
+</section>
+</section>
+<section>
+<section>
+<h2>Adapter la direction artistique</h2>
+<p>Que faire quand une image, par son ratio ou son cadrage, n’est plus adaptée à la taille du viewport ?</p>
+<p class="fragment">Il y a donc un changement de direction artistique en fonction de la taille du viewport.</p>
+<p class="fragment">Cela comprend tout changement de :</p>
+<ul>
+<li class="fragment">ratio</li>
+<li class="fragment">cadrage</li>
+<li class="fragment">contenu</li>
+</ul>
+</section>
+<section>
+<p><img src="./img/focal.png" alt="Point focal" style="width:25rem"></p>
+<ul>
+<li>recadrer une photo sur l’élément principal</li>
+<li>passer d’un format type bannière à un format plus carré</li>
+</ul>
+</section>
+<section>
+<h3>Picture</h3>
+<p>C’est le rôle de l’élément <code>&lt;picture&gt;</code>.</p>
+<p>Il sert à enrichir une image de sources alternatives en fonction de media-queries.</p>
+<pre class="hljs"><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"img-400x200.jpg"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 50em)"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img-200x200.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+</code></pre>
+<p>Chaque <code>&lt;source&gt;</code> a son propre attribut <code>srcset</code>.</p>
+<p class="alert alert_warning"><code>&lt;picture&gt;</code> est un élément intangible, il n’est pas destiné à être stylé,<br>
+ce n’est pas un conteneur.</p>
+<aside class="notes">
+<p><code>&lt;source&gt;</code> était déjà présent dans HTML 5 pour accompagner <code>&lt;audio&gt;</code> et <code>&lt;video&gt;</code>.</p>
+<p>On parle souvent de media-queries relatives à la taille du viewport mais ça peut aussi être relatif au nombre de couleurs ou plus récemment au « mode sombre »</p>
+</aside>
+</section>
+</section>
+<section>
+<section>
+<h2>Problèmes et solutions</h2>
+<p>Lors de la mise en place des images responsive, on se heurte à différentes difficultés.</p>
+<p>Les outils actuels pour déboguer <code>&lt;picture&gt;</code>, <code>srcset</code> et <code>sizes</code> sont rares.</p>
+</section>
+<section>
+<h3>Comment déboguer les <code>sizes</code> ?</h3>
+<p>Redimensionner l’écran et, à chaque pixel, comparer la taille calculée dans <code>sizes</code> pour la media-query courante avec la taille réelle affichée.</p>
+<p class="fragment">J’ai codé une petite web-extension pour faciliter ça : <a href="https://github.com/ryuran/sizes-webextension" target="_blank" rel="noopener">@ryuran/sizes-webextension</a></p>
+<p><img src="./img/sizes-extension.png" alt="Capture d’écran d’une démo de l’extension : des images sont encadrés." class="fragment" style="width:18rem"></p>
+<aside class="notes">
+<p>Comment ça « fastidieux » ?</p>
+<p>compatible chrome et firefox</p>
+</aside>
+</section>
+<section>
+<h3>Comment choisir les variantes ?</h3>
+<p>On conseille <code>5</code> variantes maximum d’images par source.</p>
+<p>Pour choisir ces formats, le mieux est de croiser avec les statistiques du site en fonction des tailles de viewport des utilisateurs.</p>
+<p>Nicolas Hoizey (<a href="https://twitter.com/nhoizey" target="_blank" rel="noopener">@nhoizey</a>) et moi-même travaillons sur un outil capable de conseiller <strong>les formats d’image les plus pertinents</strong> pour un <code>&lt;img&gt;</code> <strong>en fonction de statistiques</strong> extraites de Google Analytics : <a href="https://github.com/cleverage/responsive-image-widths" target="_blank" rel="noopener">@cleverage/responsive-image-widths</a></p>
+<p>Aidez-nous !</p>
+</section>
+<section>
+<h3>Comment générer ces variantes ?</h3>
+<p>Il existe des plugins pour la plupart des CMS pour générer des images de différentes tailles et formats à partir d’une source de bonne qualité.</p>
+<p>De nombreux services de CDN proposent de générer des variantes d’image à la volée :</p>
+<ul>
+<li><a href="https://cloudinary.com/" target="_blank" rel="noopener">Cloudinary</a></li>
+<li><a href="https://www.imgix.com/" target="_blank" rel="noopener">Imgix</a></li>
+<li><a href="https://www.twicpics.com/" target="_blank" rel="noopener">TwicPics</a></li>
+<li><a href="https://imageresizer.io/" target="_blank" rel="noopener">Imageresizer.io</a></li>
+<li>etc.</li>
+</ul>
+<aside class="notes">
+<p>une fois générées une première fois elle reste en cache sur les CDN</p>
+</aside>
+</section>
+<section>
+<h3>Comment stocker ces images ?</h3>
+<p>Avant, nous avions 1 image sur le serveur.</p>
+<p>Mais si on multiplie par ces 5 variantes, puis par 2 pour les formats <code>webp</code> :</p>
+<ul>
+<li class="fragment">10 images</li>
+<li class="fragment">Ce qui fait un poids considérable</li>
+<li class="fragment">Surtout si on multiplie par le nombre d’images du site</li>
+</ul>
+<p class="alert alert_info fragment">Le coût du stockage non-négligeable est à prendre en compte pour comparer avec<br>
+les tarifs des services cités précédemment.</p>
+</section>
+<section>
+<h3><code>srcset</code> mais pour CSS, c’est possible ?</h3>
+<p><strong>Actuellement non</strong>, ou en tous cas pas standardisé et pas avec un bon support.</p>
+<p>Un article de Chris Coyier sur le sujet : <a href="https://css-tricks.com/responsive-images-css/" target="_blank" rel="noopener">Responsive Images in CSS</a></p>
+<p>Le plus souvent, même une image dite de <code>background</code> est <strong>un choix éditorial plus que décoratif</strong>, car elle a un <strong>sens relatif au contenu</strong> plus qu’au contexte d’affichage.<br>
+Elle est même <strong>souvent contribuée</strong> (au choix du rédacteur).</p>
+<p>Donc ce devrait être un <code>&lt;img&gt;</code> dans le html.</p>
+</section>
+</section>
+<section>
+<section>
+<h2>Object-fit</h2>
+<pre class="hljs"><code class="language-css"><span class="hljs-selector-tag">img</span> { <span class="hljs-attribute">object-fit</span>: cover }
+</code></pre>
+<p>Cette propriété CSS peut être utilisée sur <code>&lt;img&gt;</code> et <code>&lt;video&gt;</code>.</p>
+<p>Cette propriété indique comment le média doit être rendu dans le viewport de l’élément.</p>
+<p>Si vous connaissez <code>background-size: cover</code> et <code>background-size: contain</code>,<br>
+le principe est le même.</p>
+<p><a href="https://caniuse.com/#feat=object-fit" target="_blank" rel="noopener">Le support est plutôt bon</a> et des polyfills existent, dont ma recommandation : <a href="https://github.com/bfred-it/object-fit-images/" target="_blank" rel="noopener">object‑fit‑images</a>.</p>
+</section>
+<section>
+<h3>Les valeurs</h3>
+<dl>
+<dt><code>fill</code></dt>
+<dd>Valeur par défaut, l’image se déforme pour couvrir la zone.</dd>
+<dt><code>contain</code></dt>
+<dd>L’image sera entièrement rendue dans la zone, avec espace « blanc » à gauche et à droite ou en haut et en bas, selon la dimension limitante.</dd>
+<dt><code>cover</code></dt>
+<dd>L’image couvre entièrement la zone, rognée à gauche et à droite ou en haut et en bas, selon la dimension limitante.</dd>
+</dl>
+</section>
+<section>
+<dl>
+<dt><code>none</code></dt>
+<dd>L’image est rendue à sa taille physique, mais rognée par le viewport.</dd>
+<dt><code>scale-down</code></dt>
+<dd>La plus petite taille de rendu entre <code>contain</code> et <code>none</code>.</dd>
+</dl>
+<p>Pour plus de détails, voir <a href="https://developer.mozilla.org/fr/docs/Web/CSS/object-fit" target="_blank" rel="noopener">la documentation MDN</a>.</p>
+</section>
+<section>
+<h3>Object-position</h3>
+<p>C’est à <code>object-fit</code> ce que <code>background-position</code> est au <code>background-size</code>.</p>
+<p>Tout comme <code>background-position</code>, <code>object-position</code> prend 2 valeurs :</p>
+<ul>
+<li>la position horizontale</li>
+<li>la position verticale</li>
+</ul>
+<p class="fragment">Les valeurs possibles sont exactement les mêmes que <code>background-position</code>.</p>
+</section>
+<section>
+<p>On a dit que <code>object-fit: cover</code> rognait à gauche et à droite si la dimension limitante était la hauteur.</p>
+<p>Mais si :</p>
+<pre class="hljs"><code class="language-css"><span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">object-position</span>: left center;
+}
+</code></pre>
+<p class="fragment">L’image ne sera rognée qu’à droite.</p>
+</section>
+<section>
+<p>Pour plus de détails, voir <a href="https://developer.mozilla.org/fr/docs/Web/CSS/object-fit" target="_blank" rel="noopener">la documentation MDN</a>.</p>
+<p class="alert alert_warning">Attention, on ne peut pas remplacer entièrement les images de fond en CSS, <code>object-repeat</code> n’existe pas.</p>
+</section>
+</section>
+
+              <section class="presentation">
+          <div class="speaker">
+  <div class="speaker-figure"><img class="speaker-img" src="../img/ryuran-cat.svg" alt=""/></div>
+  <h1 class="speaker-title">
+    <span class="speaker-firstName">Yvain</span>
+    <span class="speaker-lastName">Liechti</span>
+  </h1>
+  <div class="speaker-desc">
+    <p>
+      À votre service sur Twitter <a href="https://twitter.com/ryuran78">@ryuran78</a><br/>
+      et sur Github <a href="https://github.com/ryuran">@ryuran</a>.
+    </p>
+          <p><a href="https://ryuran.info">Ryuran.info</a></p>
+      </div>
+</div>
+
+        </section>
+                    <section class="interleaf" data-background-image="/img/pexels/389962.jpeg">
+          <!-- Photo by Mikes Photos from Pexels -->
+          <h2>Questions ?</h2>
+        </section>
+                    <section class="thanks">
+          <h2>Merci !</h2>
+          <ul class="thanks">
+            <li>Fontes
+              <ul>
+                <li>Titres : Patua One</li>
+                <li>Body : Share</li>
+                <li>Code : Share Tech Mono</li>
+              </ul>
+            </li>
+            <li>Outils
+              <p>Code source : <a href="https://github.com/ryuran/talks">https://github.com/ryuran/talks</a></p>
+            </li>
+            <li>Amis
+              <ul>
+                <li>Nicolas Hoizey</li>
+                <li>M4D'z</li>
+                <li>Océane Baron</li>
+            </li>
+          </ul>
+        </section>
+          </div>
+  </div>
+  </body>
+</html>
