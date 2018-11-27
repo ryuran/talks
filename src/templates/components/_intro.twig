@@ -1,12 +1,13 @@
 <div class="title">
   <h1>{{ title }}</h1>
+
   {% if subtitle %}
     <p class="subtitle">{{ subtitle }}</p>
   {% endif %}
   {% if dates %}
     {% for event in dates %}
       {% if event.date|isToday %}
-        <div class="date">{{ event.name }} · {{ event.date|date('MMM D, YYYY', lang) }}</div>
+        <div class="date">{{ event.name }} · {{ event.date|date('MMM D, YYYY', lang|default('fr')) }}</div>
       {% endif %}
     {% endfor %}
   {% endif %}

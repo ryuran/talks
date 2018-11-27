@@ -1,12 +1,14 @@
 {
   "title": "Talk’s title",
   "subtitle": "The talk subtitle.",
-  "dates": {
-    "name": "Event Name",
-    "place": "Paris, FR",
-    "date": "2018-11-27T18:30+0200",
-    "url": "https://exemple.com"
-  },
+  "dates": [
+    {
+      "name": "Event Name",
+      "place": "Paris, FR",
+      "date": "2018-11-27T18:30+0200",
+      "url": "https://exemple.com"
+    }
+  ],
   "speaker": {
     "firstName": "Yvain",
     "lastName": "Liechti",

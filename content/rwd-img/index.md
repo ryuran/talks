@@ -1,5 +1,5 @@
 ---
-title: Illustration Responsives
+title: Illustrations Responsive
 subtitle: Un des principaux axes d’amélioration de la performance front.
 description: Comment faire pour que le navigateur télécharge une image de la taille la plus adaptée ?
 slug: rwd-img
