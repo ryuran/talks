@@ -7,7 +7,7 @@
 <img src="low-res.jpg" srcset="low-res.jpg 1x, high-res.jpg 2x" alt=""/>
 ```
 
-Quelles que soient la taille du viewport ou la densité de pixel,  
+Quelles que soient la taille du viewport ou la densité de pixels,  
 l’image doit être la même (en termes de contenu/sens),  
 seules la qualité et la taille du fichier changent.<!-- {p:.alert.alert_warning.fragment} -->
 
@@ -41,7 +41,7 @@ img {
 ```
 
 Le descripteur `x` n’est pas satisfaisant ici,  
-car on envoie une __image plus lourde que nécessaire__ aux petits écrans. <!-- {p:.fragment} -->
+car on envoie une __image plus lourde que nécessaire__ aux petits viewports. <!-- {p:.fragment} -->
 
 Il faut donc pouvoir envoyer une image différente selon l’espace disponible. <!-- {.fragment} -->
 
@@ -70,5 +70,5 @@ C’est le navigateur qui va choisir celle qui lui est la plus adaptée selon la
 
 Mais pour que cela soit pertinent, il faut que :
 - le navigateur sache à quelle taille l’image devra s’afficher, <!-- {li:.fragment} -->
-- dés l’interprétation du HTML, <!-- {li:.fragment} -->
+- dès l’interprétation du HTML, <!-- {li:.fragment} -->
 - avant même d’interpréter le CSS. <!-- {li:.fragment} -->

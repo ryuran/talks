@@ -11,7 +11,7 @@ Cette propriété indique comment le média doit être rendu dans le viewport de
 Si vous connaissez `background-size: cover` et `background-size: contain`,  
 le principe est le même.
 
-[Le support est plutôt bon](https://caniuse.com/#feat=object-fit) et des polyfills existent, dont ma recomandation : [object‑fit‑images](https://github.com/bfred-it/object-fit-images/).
+[Le support est plutôt bon](https://caniuse.com/#feat=object-fit) et des polyfills existent, dont ma recommandation : [object‑fit‑images](https://github.com/bfred-it/object-fit-images/).
 
 ===
 

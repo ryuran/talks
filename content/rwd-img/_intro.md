@@ -1,12 +1,12 @@
 ## Introduction
 
-Les écrans récents des mobiles ont une plus grande densité de pixels.
+Les écrans récents des mobiles ont une plus grande __densité de pixels__.
 
 Le premier fut l’iPhone 4 d’Apple, avec son écran « retina » de densité 2.
 
-On trouve depuis des écrans de différents ratios de pixels physiques par pixel CSS.
-- 2 : Soit 4 fois plus de pixels pour une taille d’écran égale
-- 3 : (l’iPhone 6 plus par exemple), soit 9 fois plus de pixels
+Depuis, on trouve des écrans de différents ratios de pixels physiques par pixel CSS.
+- __2 :__ Soit __4 fois plus de pixels__ pour une taille d’écran égale
+- __3 :__ (l’iPhone 6 plus par exemple), soit __9 fois plus de pixels__
 
 [Un pixel n’est pas un pixel](http://letrainde13h37.fr/21/un-pixel-nest-pas-un-pixel/)
 
