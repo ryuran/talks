@@ -1,7 +1,7 @@
 ### L’attribut `srcet`
 
 - Attribut standard de la balise `<img>`
-- déclare quels variantes de qualité de l’images sont disponibles
+- déclare quelles variantes de qualité de l’image sont disponibles
 
 ```html
 <img src="low-res.jpg" srcset="low-res.jpg 1x, high-res.jpg 2x" alt=""/>
@@ -9,7 +9,7 @@
 
 Quelles que soient la taille du viewport ou la densité de pixel,  
 l’image doit être la même (en termes de contenu/sens),  
-seule la qualité et taille du fichier change.<!-- {p:.alert.alert_warning.fragment} -->
+seules la qualité et la taille du fichier changent.<!-- {p:.alert.alert_warning.fragment} -->
 
 ???
 
@@ -22,7 +22,7 @@ Pour ce qui est des changement d’image (ratio, contenu) nous verrons plus tard
 ```html
 <img src="low-res.jpg" srcset="low-res.jpg 1x, high-res.jpg 2x" alt=""/>
 ```
-- si le device pixel ratio est supérieur à `1` le navigateur téléchargera `high-res.jpg`
+- si le device pixel ratio est supérieur à `1`, le navigateur téléchargera `high-res.jpg`
 - sinon `low-res.jpg`
 
 L’ordre n’a pas d’importance ici. <!-- {.alert.alert_info.fragment} -->
@@ -49,14 +49,14 @@ Il faut donc pouvoir envoyer une image différente selon l’espace disponible. 
 
 #### Le descripteur `w`
 
-Avec ce descripteur, `srcset` déclare quelles largeurs d’images sont disponibles.
+Avec ce descripteur, `srcset` déclare quelles largeurs d’image sont disponibles.
 
 ```html
 <img src="img200.jpg"
 srcset="img200.jpg 200w, img600.jpg 600w, img800.jpg 800w" alt="" />
 ```
 
-C’est le navigateur qui va choisir celle qui lui est le plus adaptée selon la __taille d’affichage__, la __densité de pixels__, la qualité de la connection, les paramètres de l’utilisateur, etc.
+C’est le navigateur qui va choisir celle qui lui est la plus adaptée selon la __taille d’affichage__, la __densité de pixels__, la qualité de la connexion, les paramètres de l’utilisateur, etc.
 
 ===
 
@@ -68,7 +68,7 @@ C’est le navigateur qui va choisir celle qui lui est le plus adaptée selon la
 
 ===
 
-Mais pour que cela soit pertinent il faut que :
+Mais pour que cela soit pertinent, il faut que :
 - le navigateur sache à quelle taille l’image devra s’afficher, <!-- {li:.fragment} -->
 - dés l’interprétation du HTML, <!-- {li:.fragment} -->
 - avant même d’interpréter le CSS. <!-- {li:.fragment} -->

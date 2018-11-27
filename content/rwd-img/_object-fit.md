@@ -1,4 +1,3 @@
-
 ## Object-fit
 
 ```css
@@ -22,7 +21,7 @@ le principe est le même.
 : Valeur par défaut, l’image se déforme pour couvrir la zone.
 
 `contain`
-: L’image sera entièrement rendu dans la zone, avec espaces « blanc » à gauche et à droite ou en haut et en bas, selon la dimension limitante.
+: L’image sera entièrement rendue dans la zone, avec espace « blanc » à gauche et à droite ou en haut et en bas, selon la dimension limitante.
 
 `cover`
 : L’image couvre entièrement la zone, rognée à gauche et à droite ou en haut et en bas, selon la dimension limitante.
@@ -30,7 +29,7 @@ le principe est le même.
 ===
 
 `none`
-: L’image est rendu a sa taille physique rogné par le viewport.
+: L’image est rendue à sa taille physique, mais rognée par le viewport.
 
 `scale-down`
 : La plus petite taille de rendu entre `contain` et `none`.
@@ -43,15 +42,15 @@ Pour plus de détails, voir [la documentation MDN](https://developer.mozilla.org
 
 C’est à `object-fit` ce que `background-position` est au `background-size`.
 
-Tout comme `background-position`, `object-position` prend 2 valeur :
+Tout comme `background-position`, `object-position` prend 2 valeurs :
 - la position horizontale
 - la position verticale
 
-Les valeurs possibles sont exactement les même que `background-position`. <!-- {.fragment} -->
+Les valeurs possibles sont exactement les mêmes que `background-position`. <!-- {.fragment} -->
 
 ===
 
-On a dis que `object-fit: cover` rognait à gauche et à droite si la dimension limitante était la hauteur.
+On a dit que `object-fit: cover` rognait à gauche et à droite si la dimension limitante était la hauteur.
 
 Mais si :
 
@@ -67,4 +66,4 @@ L’image ne sera rognée qu’à droite. <!-- {.fragment} -->
 
 Pour plus de détails, voir [la documentation MDN](https://developer.mozilla.org/fr/docs/Web/CSS/object-fit).
 
-Attention, on ne peut pas remplacer entièrement les images de fonds en CSS, `object-repeat` n’existe pas. <!-- {p:.alert.alert_warning} -->
+Attention, on ne peut pas remplacer entièrement les images de fond en CSS, `object-repeat` n’existe pas. <!-- {p:.alert.alert_warning} -->

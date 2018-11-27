@@ -40,7 +40,7 @@ ce n’est pas un conteneur.<!-- {p:.alert.alert_warning} -->
 
 `<source>` était déjà présent dans HTML 5 pour accompagner `<audio>` et `<video>`.
 
-On parle souvent de media-queries relatif à la taille du viewport mais ça peut aussi être relatif au nombre de couleur ou plus récemment au « mode sombre »
+On parle souvent de media-queries relatives à la taille du viewport mais ça peut aussi être relatif au nombre de couleurs ou plus récemment au « mode sombre »
 
 ===
 
