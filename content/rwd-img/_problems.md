@@ -1,6 +1,6 @@
 ## Problèmes et solutions
 
-Lors de la mise en places des images responsives on se heurte à différentes difficultés.
+Lors de la mise en place des images responsive, on se heurte à différentes difficultés.
 
 Les outils actuels pour déboguer `<picture>`, `srcset` et `sizes` sont rares.
 
@@ -8,7 +8,7 @@ Les outils actuels pour déboguer `<picture>`, `srcset` et `sizes` sont rares.
 
 ### Comment déboguer les `sizes` ?
 
-Redimensionner l’écran et, à chaque pixel, comparer la taille calculé dans `sizes` pour la media-query courante avec la taille réelle affiché.
+Redimensionner l’écran et, à chaque pixel, comparer la taille calculée dans `sizes` pour la media-query courante avec la taille réelle affichée.
 
 J’ai codé une petite web-extension pour faciliter ça : [@ryuran/sizes-webextension](https://github.com/ryuran/sizes-webextension) <!-- {p:.fragment} -->
 
@@ -24,19 +24,19 @@ compatible chrome et firefox
 
 ### Comment choisir les variantes ?
 
-On conseille `5` variantes maximum d’images par sources.
+On conseille `5` variantes maximum d’images par source.
 
-Pour choisir ces formats le mieux est de croiser avec les statistique du site en fonction des taille de viewport des utilisateurs.
+Pour choisir ces formats, le mieux est de croiser avec les statistiques du site en fonction des tailles de viewport des utilisateurs.
 
-Nicolas Hoizey ([@nhoizey](https://twitter.com/nhoizey)) et moi-même travaillons sur un outils capable de conseiller __les formats d’images les plus pertinents__ pour un `<img>` __en fonctions de statistiques__ extraites de Google Analytics : [@cleverage/responsive-image-widths](https://github.com/cleverage/responsive-image-widths)
+Nicolas Hoizey ([@nhoizey](https://twitter.com/nhoizey)) et moi-même travaillons sur un outil capable de conseiller __les formats d’image les plus pertinents__ pour un `<img>` __en fonction de statistiques__ extraites de Google Analytics : [@cleverage/responsive-image-widths](https://github.com/cleverage/responsive-image-widths)
 
-Aidez nous !
+Aidez-nous !
 
 ===
 
 ### Comment générer ces variantes ?
 
-Il existe des plugins pour la plus part des CMS pour générer des images de différentes tailles et format à partir d’une source de bonne qualité.
+Il existe des plugins pour la plupart des CMS pour générer des images de différentes tailles et formats à partir d’une source de bonne qualité.
 
 De nombreux services de CDN proposent de générer des variantes d’image à la volée :
 - [Cloudinary](https://cloudinary.com/)
@@ -53,21 +53,21 @@ une fois générées une première fois elle reste en cache sur les CDN
 
 ### Comment stocker ces images ?
 
-Avant nous avions 1 images sur le serveur.
+Avant, nous avions 1 image sur le serveur.
 
-Mais si on multiplie par ces 5 variantes + encore par 2 pour les formats `webp` :
+Mais si on multiplie par ces 5 variantes, puis par 2 pour les formats `webp` :
 - 10 images <!-- {li:.fragment} -->
 - Ce qui fait un poids considérable <!-- {li:.fragment} -->
 - Surtout si on multiplie par le nombre d’images du site <!-- {li:.fragment} -->
 
-Le coût du stockage non-négligeable à en compte pour comparer avec  
+Le coût du stockage non-négligeable est à prendre en compte pour comparer avec  
 les tarifs des services cités précédemment. <!-- {p:.alert.alert_info.fragment} -->
 
 ===
 
-### `srcset` mais pour CSS c’est possible ?
+### `srcset` mais pour CSS, c’est possible ?
 
-__Actuellement non__, ou en tout cas pas standardisé et pas avec un bon support.
+__Actuellement non__, ou en tous cas pas standardisé et pas avec un bon support.
 
 Un article de Chris Coyier sur le sujet : [Responsive Images in CSS](https://css-tricks.com/responsive-images-css/)
 

@@ -31,7 +31,7 @@ sizes="100vw" />
 
 ===
 
-#### Du plus précis au cas par défaut
+#### Du cas le plus précis au cas par défaut
 
 ```html
 <img src="small.jpg"
@@ -39,7 +39,7 @@ srcset="small.jpg 400w, medium.jpg 700w, large.jpg 1400w" alt=""
 sizes="(min-width: 60em) 700px, (min-width: 35em) calc(100vw - 2rem), 100vw" />
 ```
 
-C’est la __première règle validée__ par le context qui sera __appliquée__.
+C’est la __première règle validée__ par le contexte qui sera __appliquée__.
 
 Si mon viewport fait `600px`, que la taille de police racine est de `16px` et que la densité de pixel a un ratio de `1` : <!-- {p:.fragment} -->
 - `600 / 16 = 37.5` donc `< 60em` et `>= 35em` <!-- {li:.fragment} -->
